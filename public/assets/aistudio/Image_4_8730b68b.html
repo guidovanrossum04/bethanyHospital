@@ -1,0 +1,846 @@
+<!DOCTYPE html><html class="light" lang="en" style=""><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Bethany Nature Care Dashboard</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+  tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        "colors": {
+          "sage-wash": "#D8E2DC",
+          "outline-variant": "#c1c8c2",
+          "on-tertiary-container": "#ea9147",
+          "on-surface": "#1a1c1a",
+          "tertiary-fixed": "#ffdcc4",
+          "secondary-container": "#b0f1cc",
+          "bark-brown": "#606C38",
+          "primary-fixed": "#c1ecd4",
+          "on-secondary": "#ffffff",
+          "primary-fixed-dim": "#a5d0b9",
+          "surface-container-low": "#f3f4f0",
+          "on-tertiary": "#ffffff",
+          "surface-container-lowest": "#ffffff",
+          "on-tertiary-fixed": "#2f1400",
+          "on-secondary-fixed-variant": "#0c5136",
+          "tertiary-container": "#5f2f00",
+          "on-secondary-fixed": "#002113",
+          "error": "#ba1a1a",
+          "inverse-primary": "#a5d0b9",
+          "sun-warmth": "#FEFAE0",
+          "background": "#f9faf6",
+          "on-secondary-container": "#327053",
+          "on-error-container": "#93000a",
+          "surface-dim": "#d9dad7",
+          "primary-container": "#1b4332",
+          "tertiary": "#3f1d00",
+          "outline": "#717973",
+          "forest-deep": "#081C15",
+          "error-container": "#ffdad6",
+          "on-tertiary-fixed-variant": "#6f3800",
+          "primary": "#012d1d",
+          "secondary-fixed-dim": "#94d4b1",
+          "on-primary-fixed-variant": "#274e3d",
+          "tertiary-fixed-dim": "#ffb781",
+          "on-surface-variant": "#414844",
+          "on-primary-container": "#86af99",
+          "on-background": "#1a1c1a",
+          "surface-variant": "#e2e3df",
+          "surface-container-high": "#e7e9e5",
+          "on-primary-fixed": "#002114",
+          "surface-tint": "#3f6653",
+          "surface-container-highest": "#e2e3df",
+          "inverse-on-surface": "#f0f1ed",
+          "on-error": "#ffffff",
+          "on-primary": "#ffffff",
+          "surface": "#f9faf6",
+          "inverse-surface": "#2e312f",
+          "secondary": "#2b694d",
+          "surface-bright": "#f9faf6",
+          "secondary-fixed": "#b0f1cc",
+          "surface-container": "#edeeea"
+        },
+        "borderRadius": {
+          "DEFAULT": "0.25rem",
+          "lg": "0.5rem",
+          "xl": "0.75rem",
+          "full": "9999px"
+        },
+        "spacing": {
+          "margin-desktop": "32px",
+          "container-max": "1280px",
+          "gutter": "24px",
+          "margin-mobile": "16px",
+          "base-unit": "8px"
+        },
+        "fontFamily": {
+          "body": ["Inter", "sans-serif"]
+        }
+      },
+    },
+  }
+</script>
+<style>
+  body { font-family: 'Inter', sans-serif; }
+  .material-symbols-outlined {
+    font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+  }
+  .material-symbols-fill {
+    font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+  }
+</style>
+<meta content="web_standard" name="shell-type"></head>
+<body class="bg-[#f9faf6] text-on-background antialiased flex h-screen overflow-hidden">
+<!-- SideNavBar -->
+<nav class="bg-surface-container-lowest text-secondary flex flex-col h-screen py-8 px-4 border-r border-[#e5e7eb] docked left-0 h-full w-64 z-20 flex-shrink-0 hidden md:flex">
+<!-- Brand Header -->
+<div class="mb-8 px-3">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-lg bg-primary-container flex items-center justify-center text-white shadow-sm">
+<span class="material-symbols-outlined material-symbols-fill text-2xl">local_hospital</span>
+</div>
+<div>
+<h1 class="font-bold text-base text-[#111827] leading-tight tracking-tight">Bethany<br>Nature Care</h1>
+<p class="text-xs text-on-surface-variant font-normal mt-0.5">Clinical Management</p>
+</div>
+</div>
+</div>
+<!-- Navigation Menu -->
+<ul class="flex-1 space-y-1.5 overflow-y-auto pr-1">
+<li class="">
+<a class="flex items-center gap-3.5 px-3.5 py-2.5 rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-[#f0f3f0] transition-colors cursor-pointer" href="#">
+<span class="material-symbols-outlined text-xl">dashboard</span>
+<span class="text-sm font-medium">Dashboard</span>
+</a>
+</li>
+<li class="">
+<a class="flex items-center gap-3.5 px-3.5 py-2.5 rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-[#f0f3f0] transition-colors cursor-pointer" href="#">
+<span class="material-symbols-outlined text-xl">person_add</span>
+<span class="text-sm font-medium">Patients</span>
+</a>
+</li>
+<li class="">
+<a class="flex items-center gap-3.5 px-3.5 py-2.5 rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-[#f0f3f0] transition-colors cursor-pointer" href="#">
+<span class="material-symbols-outlined text-xl">inventory_2</span>
+<span class="text-sm font-medium">Inventory</span>
+</a>
+</li>
+<li class="">
+<a class="flex items-center gap-3.5 px-3.5 py-2.5 rounded-lg text-secondary font-semibold bg-[#e8eee9] border-r-4 border-secondary cursor-pointer transition-colors" href="#">
+<span class="material-symbols-outlined material-symbols-fill text-xl">meeting_room</span>
+<span class="text-sm">Facilities</span>
+</a>
+</li>
+<li class="">
+<a class="flex items-center gap-3.5 px-3.5 py-2.5 rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-[#f0f3f0] transition-colors cursor-pointer" href="#">
+<span class="material-symbols-outlined text-xl">assessment</span>
+<span class="text-sm font-medium">Reports</span>
+</a>
+</li>
+</ul>
+<!-- Bottom Navigation Items -->
+<div class="mt-auto pt-6 border-t border-[#e5e7eb]">
+<ul class="space-y-1">
+<li class="">
+<a class="flex items-center gap-3.5 px-3.5 py-2 rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-[#f0f3f0] transition-colors cursor-pointer" href="#">
+<span class="material-symbols-outlined text-xl">settings</span>
+<span class="text-sm font-medium">Settings</span>
+</a>
+</li>
+<li class="">
+<a class="flex items-center gap-3.5 px-3.5 py-2 rounded-lg text-error hover:bg-error-container hover:text-on-error-container transition-colors cursor-pointer" href="#">
+<span class="material-symbols-outlined text-xl">logout</span>
+<span class="text-sm font-medium">Logout</span>
+</a>
+</li>
+</ul>
+</div>
+</nav>
+<!-- Main Content Area -->
+<div class="flex-1 flex flex-col min-w-0 bg-[#f9faf6]">
+<!-- TopAppBar -->
+<header class="bg-[#f9faf6] flex justify-between items-center h-16 px-6 md:px-8 w-full border-b border-[#e5e7eb] z-10 flex-shrink-0">
+<div class="flex items-center md:hidden">
+<h1 class="text-base font-bold text-on-surface">Bethany Nature Care</h1>
+</div>
+<!-- Search bar & User controls -->
+<div class="flex items-center gap-5 ml-auto">
+
+<div class="flex items-center gap-2">
+<button class="p-1.5 rounded-full text-gray-500 hover:bg-[#eaede8] transition-colors" title="Notifications">
+<span class="material-symbols-outlined text-xl">notifications</span>
+</button>
+<button class="p-1.5 rounded-full text-gray-500 hover:bg-[#eaede8] transition-colors hidden sm:block" title="Help">
+<span class="material-symbols-outlined text-xl">help_outline</span>
+</button>
+</div>
+<div class="h-6 w-px bg-[#e5e7eb] mx-1 hidden sm:block"></div>
+<div class="flex items-center gap-3">
+<div class="text-right hidden lg:block">
+<p class="text-[11px] text-gray-500 uppercase tracking-wider font-semibold">Role: Receptionist</p>
+<p class="text-sm font-semibold text-gray-900 leading-tight">Sarah Jenkins</p>
+</div>
+<img alt="User Profile Avatar" class="w-9 h-9 rounded-full border border-outline-variant object-cover ring-1 ring-black/5 shadow-xs" data-alt="A professional headshot of a female doctor in her 40s wearing a white clinical coat over a blue scrub top. She has a warm, confident smile, neat shoulder-length dark hair, and glasses. The background is a slightly blurred, bright, modern hospital corridor with soft, cool daylight illuminating her face evenly. The image conveys trust, competence, and a clean clinical environment." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAoSJvegP6hOgBzhMWwFKj_YYq1b-gu6_fYvt8gTnNPAssLWnO9MXHus5n2lySOrarhZ6Ht3RAZuEihQM8qxswv9raxMpAJZPQb4CdWjps61iNN85o8hI_gbhTN-ZpZwUj5sqLvpg6YTKJFeYBzEtIazUWVbhCFk5MRPeQkAvHEvNcyNUtSEOLKZSWTilC9aWyWuIbSdu7xPaQL68gan39OXkhju_sU_GwxYXXhgUkkbj0oAZBWGWqN">
+</div>
+</div>
+</header>
+<!-- Dashboard Canvas -->
+<main class="flex-1 overflow-y-auto p-6 md:p-8 bg-[#f9faf6]"><div class="flex flex-col w-full">
+<!-- Subtle Ambient Glow -->
+<div class="relative w-full">
+<div class="absolute -top-10 -right-10 w-96 h-96 bg-secondary-container/20 rounded-full blur-3xl pointer-events-none -z-10"></div>
+<div class="absolute top-48 left-1/3 w-80 h-80 bg-sun-warmth/40 rounded-full blur-2xl pointer-events-none -z-10"></div>
+</div>
+<!-- Breadcrumb & Header Section -->
+<div class="flex flex-col lg:flex-row lg:items-end justify-between gap-6 pb-8">
+<div class="space-y-2">
+<div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-surface-container-high text-on-surface-variant text-label-sm font-label-sm">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+<span class="">Inpatient &amp; Wellness Suites</span>
+<span class="text-outline-variant">/</span>
+<span class="text-secondary font-semibold">Facilities Management</span>
+</div>
+<h1 class="text-headline-lg font-headline-lg text-primary tracking-tight">Room &amp; Bed Availability</h1>
+<p class="text-body-md font-body-md text-on-surface-variant max-w-2xl">
+        Monitor live room occupancy, bed availability, and tariffs across AC and Non-AC holistic care cottages &amp; suites.
+      </p>
+</div>
+<!-- Quick Action Controls -->
+<div class="flex flex-wrap items-center gap-3">
+<button class="inline-flex items-center gap-2 px-4 py-2.5 rounded-lg bg-surface-container-lowest text-on-surface shadow-sm hover:bg-surface-container transition-colors text-label-md font-label-md">
+<span class="material-symbols-outlined text-lg text-secondary">refresh</span>
+<span class="">Refresh Status</span>
+</button>
+<button class="inline-flex items-center gap-2 px-4 py-2.5 rounded-lg bg-surface-container text-on-secondary-container shadow-sm hover:bg-surface-container-high transition-colors text-label-md font-label-md">
+<span class="material-symbols-outlined text-lg">summarize</span>
+<span class="">Discharge Summary</span>
+</button>
+<button class="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-primary text-on-primary shadow-md hover:bg-primary-container transition-all text-label-md font-label-md shadow-primary/10">
+<span class="material-symbols-outlined text-lg">hotel</span>
+<span class="">Book Room / Bed</span>
+</button>
+</div>
+</div>
+<!-- Metric Summary Cards -->
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 pb-8">
+<!-- Metric 1: Total Rooms / Beds -->
+<div class="bg-surface-container-lowest rounded-xl p-5 shadow-sm hover:shadow-md transition-shadow relative overflow-hidden group">
+<div class="absolute top-0 right-0 w-24 h-24 bg-secondary-fixed/30 rounded-bl-full pointer-events-none transition-transform group-hover:scale-105"></div>
+<div class="flex items-center justify-between pb-3">
+<span class="text-label-sm font-label-sm text-on-surface-variant uppercase tracking-wider">Total Rooms / Beds</span>
+<div class="w-9 h-9 rounded-lg bg-surface-container flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined text-xl">bedroom_parent</span>
+</div>
+</div>
+<div class="flex items-baseline gap-2">
+<span class="text-headline-lg font-headline-lg text-forest-deep tracking-tight">42</span>
+<span class="text-body-sm font-body-sm text-on-surface-variant font-medium">Beds</span>
+</div>
+<div class="mt-3 flex items-center gap-3 pt-3 bg-surface-container-low/50 rounded-lg px-2.5 py-1.5">
+<div class="flex items-center gap-1.5">
+<span class="w-2 h-2 rounded-full bg-secondary"></span>
+<span class="text-label-sm font-label-sm text-on-surface font-semibold">32 Available</span>
+</div>
+<span class="text-outline-variant">•</span>
+<div class="flex items-center gap-1.5">
+<span class="w-2 h-2 rounded-full bg-outline"></span>
+<span class="text-label-sm font-label-sm text-on-surface-variant">10 Occupied</span>
+</div>
+</div>
+</div>
+<!-- Metric 2: AC Suites -->
+<div class="bg-surface-container-lowest rounded-xl p-5 shadow-sm hover:shadow-md transition-shadow relative overflow-hidden group">
+<div class="absolute top-0 right-0 w-24 h-24 bg-primary-fixed/30 rounded-bl-full pointer-events-none transition-transform group-hover:scale-105"></div>
+<div class="flex items-center justify-between pb-3">
+<span class="text-label-sm font-label-sm text-on-surface-variant uppercase tracking-wider">AC Suites &amp; Deluxe</span>
+<div class="w-9 h-9 rounded-lg bg-surface-container flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-xl">mode_fan</span>
+</div>
+</div>
+<div class="flex items-baseline gap-2">
+<span class="text-headline-lg font-headline-lg text-primary tracking-tight">18</span>
+<span class="text-body-sm font-body-sm text-on-surface-variant font-medium">Beds</span>
+</div>
+<div class="mt-3 flex items-center gap-3 pt-3 bg-surface-container-low/50 rounded-lg px-2.5 py-1.5">
+<div class="flex items-center gap-1.5">
+<span class="w-2 h-2 rounded-full bg-secondary"></span>
+<span class="text-label-sm font-label-sm text-on-surface font-semibold">12 Available</span>
+</div>
+<span class="text-outline-variant">•</span>
+<div class="flex items-center gap-1.5">
+<span class="w-2 h-2 rounded-full bg-bark-brown"></span>
+<span class="text-label-sm font-label-sm text-on-surface-variant">6 Occupied</span>
+</div>
+</div>
+</div>
+<!-- Metric 3: Non-AC Cottages -->
+<div class="bg-surface-container-lowest rounded-xl p-5 shadow-sm hover:shadow-md transition-shadow relative overflow-hidden group">
+<div class="absolute top-0 right-0 w-24 h-24 bg-sun-warmth rounded-bl-full pointer-events-none transition-transform group-hover:scale-105"></div>
+<div class="flex items-center justify-between pb-3">
+<span class="text-label-sm font-label-sm text-on-surface-variant uppercase tracking-wider">NON-AC ROOMS</span>
+<div class="w-9 h-9 rounded-lg bg-surface-container flex items-center justify-center text-bark-brown">
+<span class="material-symbols-outlined text-xl">cottage</span>
+</div>
+</div>
+<div class="flex items-baseline gap-2">
+<span class="text-headline-lg font-headline-lg text-forest-deep tracking-tight">24</span>
+<span class="text-body-sm font-body-sm text-on-surface-variant font-medium">Beds</span>
+</div>
+<div class="mt-3 flex items-center gap-3 pt-3 bg-surface-container-low/50 rounded-lg px-2.5 py-1.5">
+<div class="flex items-center gap-1.5">
+<span class="w-2 h-2 rounded-full bg-secondary"></span>
+<span class="text-label-sm font-label-sm text-on-surface font-semibold">20 Available</span>
+</div>
+<span class="text-outline-variant">•</span>
+<div class="flex items-center gap-1.5">
+<span class="w-2 h-2 rounded-full bg-outline"></span>
+<span class="text-label-sm font-label-sm text-on-surface-variant">4 Occupied</span>
+</div>
+</div>
+</div>
+<!-- Metric 4: Sanitization / Maintenance -->
+<div class="bg-surface-container-lowest rounded-xl p-5 shadow-sm hover:shadow-md transition-shadow relative overflow-hidden group">
+<div class="absolute top-0 right-0 w-24 h-24 bg-tertiary-fixed/40 rounded-bl-full pointer-events-none transition-transform group-hover:scale-105"></div>
+<div class="flex items-center justify-between pb-3">
+<span class="text-label-sm font-label-sm text-on-surface-variant uppercase tracking-wider">Sanitization &amp; Maint.</span>
+<div class="w-9 h-9 rounded-lg bg-surface-container flex items-center justify-center text-tertiary">
+<span class="material-symbols-outlined text-xl">sanitizer</span>
+</div>
+</div>
+<div class="flex items-baseline gap-2">
+<span class="text-headline-lg font-headline-lg text-tertiary tracking-tight">2</span>
+<span class="text-body-sm font-body-sm text-on-surface-variant font-medium">Beds</span>
+</div>
+<div class="mt-3 flex items-center gap-2 pt-3 bg-surface-container-low/50 rounded-lg px-2.5 py-1.5">
+<span class="material-symbols-outlined text-sm text-on-tertiary-container">schedule</span>
+<span class="text-label-sm font-label-sm text-on-surface-variant">Expected ready by 14:00</span>
+</div>
+</div>
+</div>
+<!-- Filter & View Controls Bar -->
+<div class="bg-surface-container-lowest rounded-xl p-4 shadow-sm mb-8 flex flex-col md:flex-row items-stretch md:items-center justify-between gap-4">
+<!-- Category Filter Pills -->
+<div class="flex flex-wrap items-center gap-2">
+<button class="px-4 py-2 rounded-full bg-primary text-on-primary text-label-md font-label-md shadow-xs">
+        All Rooms (42)
+      </button>
+<button class="px-4 py-2 rounded-full bg-surface-container-low text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors text-label-md font-label-md">
+        AC Deluxe &amp; Suites (18)
+      </button>
+<button class="px-4 py-2 rounded-full bg-surface-container-low text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors text-label-md font-label-md">Non-AC Rooms (24)</button>
+<button class="px-4 py-2 rounded-full bg-surface-container-low text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors text-label-md font-label-md inline-flex items-center gap-1.5">
+<span class="w-2 h-2 rounded-full bg-secondary"></span>
+<span class="">Available Only (32)</span>
+</button>
+<button class="px-4 py-2 rounded-full bg-surface-container-low text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors text-label-md font-label-md">
+        Occupied (10)
+      </button>
+</div>
+<!-- Wings and Floors Selector -->
+<div class="flex items-center gap-3">
+<div class="flex items-center gap-2 bg-surface-container-low px-3 py-1.5 rounded-lg">
+<span class="material-symbols-outlined text-lg text-secondary">domain</span>
+<select class="bg-transparent text-label-md font-label-md text-on-surface focus:outline-none cursor-pointer pr-4">
+<option>All Wings &amp; Floors</option>
+<option>Ground Floor - Herbal Garden View</option>
+<option>First Floor - Ayurvedic Healing Wing</option>
+<option>Second Floor - Panchakarma Recovery</option>
+</select>
+</div>
+<div class="flex items-center rounded-lg bg-surface-container-low p-1">
+<button class="p-1.5 rounded bg-surface-container-lowest text-secondary shadow-xs" title="Grid View">
+<span class="material-symbols-outlined text-lg">grid_view</span>
+</button>
+<button class="p-1.5 rounded text-on-surface-variant hover:text-on-surface" title="List View">
+<span class="material-symbols-outlined text-lg">view_list</span>
+</button>
+</div>
+</div>
+</div>
+<!-- SECTION A: AC Deluxe Suites -->
+<div class="space-y-4 pb-12">
+<!-- Section Title & Badge -->
+<div class="flex items-center justify-between pb-2">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-lg bg-primary text-on-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-lg">ac_unit</span>
+</div>
+<div>
+<h2 class="text-headline-sm font-headline-sm text-primary">Air-Conditioned Suites &amp; Deluxe Rooms</h2>
+<p class="text-body-sm font-body-sm text-on-surface-variant">Climate-regulated therapeutic suites with private courtyards and dedicated nurse stations</p>
+</div>
+</div>
+<span class="px-3 py-1 rounded-full bg-secondary-fixed text-on-secondary-fixed-variant text-label-sm font-label-sm">
+        12 Vacant / 6 Occupied
+      </span>
+</div>
+<!-- AC Rooms Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
+<!-- Room Card 1: 101 Lotus Suite (AC - Available) -->
+<div class="bg-surface-container-lowest rounded-xl shadow-sm hover:shadow-md transition-all flex flex-col justify-between overflow-hidden">
+<div>
+<!-- Header strip with subtle tone -->
+<div class="bg-sun-warmth/60 px-5 py-3.5 flex items-center justify-between">
+<div>
+<span class="text-label-sm font-label-sm text-bark-brown uppercase tracking-wider font-semibold">Wing A • Ground Floor</span>
+<h3 class="text-label-md font-label-md text-forest-deep">Room 101 - Lotus Suite (AC)</h3>
+</div>
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-secondary-fixed text-on-secondary-fixed-variant text-label-sm font-label-sm font-semibold">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary animate-pulse"></span>
+              Available
+            </span>
+</div>
+<!-- Graphic Bed Canvas & Specs -->
+<div class="p-5 space-y-4">
+<!-- Bed Visual Vector Graphic -->
+<div class="h-28 bg-surface-container-low rounded-lg flex items-center justify-center p-3 relative overflow-hidden">
+<div class="absolute inset-0 bg-gradient-to-r from-transparent via-secondary/5 to-transparent"></div>
+<!-- Bed Schematic SVG -->
+<svg class="h-20 w-auto text-secondary" fill="none" viewBox="0 0 120 70" xmlns="http://www.w3.org/2000/svg">
+<!-- Headboard -->
+<rect fill="#1b4332" height="46" rx="3" width="8" x="8" y="14"></rect>
+<!-- Bed Frame -->
+<rect fill="#edeeea" height="30" rx="4" stroke="#c1c8c2" stroke-width="2" width="88" x="16" y="24"></rect>
+<!-- Mattress / Duvet -->
+<rect fill="#ffffff" height="22" rx="3" width="78" x="22" y="28"></rect>
+<!-- Folded Herbal Sheet Accent -->
+<rect fill="#b0f1cc" height="22" opacity="0.65" rx="3" width="48" x="52" y="28"></rect>
+<!-- Pillows -->
+<rect fill="#d8e2dc" height="16" rx="2" width="16" x="24" y="31"></rect>
+<rect fill="#ffffff" height="12" rx="2" width="14" x="24" y="33"></rect>
+<!-- Bedside Table -->
+<rect fill="#606C38" height="24" opacity="0.8" rx="2" width="10" x="106" y="32"></rect>
+<circle cx="111" cy="40" fill="#FEFAE0" r="1.5"></circle>
+<!-- Legs -->
+<rect fill="#1b4332" height="10" rx="1" width="4" x="18" y="54"></rect>
+<rect fill="#1b4332" height="10" rx="1" width="4" x="98" y="54"></rect>
+</svg>
+</div>
+<!-- Features Tags -->
+<div class="grid grid-cols-2 gap-2 text-body-sm font-body-sm text-on-surface-variant">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-base text-secondary">single_bed</span>
+<span class="">Single Therapeutic</span>
+</div>
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-base text-secondary">bathtub</span>
+<span class="">Attached Herbal Bath</span>
+</div>
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-base text-secondary">balcony</span>
+<span class="">Courtyard View</span>
+</div>
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-base text-secondary">hvac</span>
+<span class="">HEPA Climate Filter</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Tariff & Action Footer -->
+<div class="p-5 pt-0">
+<div class="bg-surface-container-low rounded-lg p-3 flex items-center justify-between mb-4">
+<div>
+<span class="text-label-sm font-label-sm text-on-surface-variant block">Tariff Rate</span>
+<span class="text-headline-sm font-headline-sm text-primary font-bold">₹3,500 <span class="text-body-sm font-normal text-on-surface-variant">/ day</span></span>
+</div>
+<span class="text-label-sm font-label-sm text-on-secondary-container bg-secondary-fixed/50 px-2 py-0.5 rounded">All-inclusive care</span>
+</div>
+<button class="w-full py-2.5 rounded-lg bg-primary text-on-primary hover:bg-primary-container text-label-md font-label-md transition-colors flex items-center justify-center gap-2 shadow-sm">
+<span class="material-symbols-outlined text-base">person_add</span>
+<span class="">Assign Patient</span>
+</button>
+</div>
+</div>
+<!-- Room Card 2: 103 Sandalwood Suite (AC - Occupied) -->
+<div class="bg-surface-container-lowest rounded-xl shadow-sm hover:shadow-md transition-all flex flex-col justify-between overflow-hidden">
+<div>
+<!-- Header strip -->
+<div class="bg-surface-container px-5 py-3.5 flex items-center justify-between">
+<div>
+<span class="text-label-sm font-label-sm text-on-surface-variant uppercase tracking-wider font-semibold">Wing A • Ground Floor</span>
+<h3 class="text-label-md font-label-md text-forest-deep">Room 103 - Sandalwood Suite (AC)</h3>
+</div>
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-surface-variant text-on-surface-variant text-label-sm font-label-sm font-semibold">
+<span class="w-1.5 h-1.5 rounded-full bg-outline"></span>
+              Occupied
+            </span>
+</div>
+<!-- Graphic Bed Canvas & Specs -->
+<div class="p-5 space-y-4">
+<div class="h-28 bg-surface-container-low rounded-lg flex items-center justify-center p-3 relative overflow-hidden">
+<svg class="h-20 w-auto text-outline" fill="none" viewBox="0 0 120 70" xmlns="http://www.w3.org/2000/svg">
+<!-- Headboard -->
+<rect fill="#717973" height="46" rx="3" width="8" x="8" y="14"></rect>
+<!-- Bed Frame -->
+<rect fill="#e2e3df" height="30" rx="4" stroke="#c1c8c2" stroke-width="2" width="88" x="16" y="24"></rect>
+<!-- Mattress Occupied / Pillows -->
+<rect fill="#f3f4f0" height="22" rx="3" width="78" x="22" y="28"></rect>
+<rect fill="#a5d0b9" height="22" opacity="0.5" rx="3" width="64" x="36" y="28"></rect>
+<rect fill="#c1c8c2" height="16" rx="2" width="16" x="24" y="31"></rect>
+<!-- Bedside Table & IV Stand Icon -->
+<rect fill="#717973" height="24" opacity="0.6" rx="2" width="10" x="106" y="32"></rect>
+<line stroke="#717973" stroke-width="1.5" x1="112" x2="112" y1="12" y2="32"></line>
+<circle cx="112" cy="12" fill="#717973" r="3"></circle>
+<!-- Legs -->
+<rect fill="#717973" height="10" rx="1" width="4" x="18" y="54"></rect>
+<rect fill="#717973" height="10" rx="1" width="4" x="98" y="54"></rect>
+</svg>
+</div>
+<!-- Current Occupant Details Pill -->
+<div class="bg-surface-container-low rounded-lg p-3 flex items-center justify-between">
+<div class="flex items-center gap-2.5">
+<span class="w-7 h-7 rounded-full bg-secondary text-on-secondary flex items-center justify-center text-label-sm font-bold">AK</span>
+<div>
+<span class="text-label-sm font-label-sm text-forest-deep block leading-tight font-semibold">Mr. Ashok Kumar</span>
+<span class="text-body-sm font-body-sm text-on-surface-variant text-xs">ID: BNC-8842 • Dr. Menon</span>
+</div>
+</div>
+<span class="text-label-sm font-label-sm text-on-surface-variant bg-surface-container px-2 py-0.5 rounded">Day 4 of 7</span>
+</div>
+<!-- Features Tags -->
+<div class="grid grid-cols-2 gap-2 text-body-sm font-body-sm text-on-surface-variant">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-base text-outline">single_bed</span>
+<span class="">Deluxe Suite</span>
+</div>
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-base text-outline">bathtub</span>
+<span class="">Bath &amp; Steam</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Tariff & Action Footer -->
+<div class="p-5 pt-0">
+<div class="bg-surface-container-low rounded-lg p-3 flex items-center justify-between mb-4">
+<div>
+<span class="text-label-sm font-label-sm text-on-surface-variant block">Tariff Rate</span>
+<span class="text-headline-sm font-headline-sm text-forest-deep font-bold">₹3,500 <span class="text-body-sm font-normal text-on-surface-variant">/ day</span></span>
+</div>
+<span class="text-label-sm font-label-sm text-on-surface-variant">Exp. Discharge: Tom. 11am</span>
+</div>
+<div class="grid grid-cols-2 gap-2">
+<button class="py-2.5 rounded-lg bg-surface-container-high text-on-surface hover:bg-surface-variant text-label-md font-label-md transition-colors flex items-center justify-center gap-1">
+<span class="material-symbols-outlined text-base">visibility</span>
+<span class="">Patient Profile</span>
+</button>
+<button class="py-2.5 rounded-lg bg-surface-container text-on-secondary-container hover:bg-surface-container-high text-label-md font-label-md transition-colors flex items-center justify-center gap-1">
+<span class="material-symbols-outlined text-base">swap_horiz</span>
+<span class="">Shift Bed</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Room Card 3: 203 Bamboo Suite (AC - Sanitizing) -->
+<div class="bg-surface-container-lowest rounded-xl shadow-sm hover:shadow-md transition-all flex flex-col justify-between overflow-hidden">
+<div>
+<!-- Header strip -->
+<div class="bg-tertiary-fixed/30 px-5 py-3.5 flex items-center justify-between">
+<div>
+<span class="text-label-sm font-label-sm text-tertiary uppercase tracking-wider font-semibold">Wing B • First Floor</span>
+<h3 class="text-label-md font-label-md text-forest-deep">Room 203 - Bamboo Suite (AC)</h3>
+</div>
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-tertiary-fixed text-on-tertiary-fixed text-label-sm font-label-sm font-semibold">
+<span class="w-1.5 h-1.5 rounded-full bg-on-tertiary-container animate-pulse"></span>
+              Sanitizing
+            </span>
+</div>
+<!-- Graphic Bed Canvas & Specs -->
+<div class="p-5 space-y-4">
+<div class="h-28 bg-surface-container-low rounded-lg flex items-center justify-center p-3 relative overflow-hidden">
+<svg class="h-20 w-auto text-on-tertiary-container" fill="none" viewBox="0 0 120 70" xmlns="http://www.w3.org/2000/svg">
+<!-- Headboard -->
+<rect fill="#6f3800" height="46" opacity="0.7" rx="3" width="8" x="8" y="14"></rect>
+<rect fill="#ffffff" height="30" rx="4" stroke="#ffb781" stroke-width="2" width="88" x="16" y="24"></rect>
+<rect fill="#ffdcc4" height="22" opacity="0.4" rx="3" width="78" x="22" y="28"></rect>
+<!-- Sanitizer Sparkle overlay icon -->
+<circle cx="60" cy="38" fill="#ea9147" opacity="0.15" r="14"></circle>
+<path d="M60 30L62 36L68 38L62 40L60 46L58 40L52 38L58 36L60 30Z" fill="#ea9147"></path>
+<rect fill="#6f3800" height="10" opacity="0.7" rx="1" width="4" x="18" y="54"></rect>
+<rect fill="#6f3800" height="10" opacity="0.7" rx="1" width="4" x="98" y="54"></rect>
+</svg>
+</div>
+<!-- Sanitization notice -->
+<div class="bg-tertiary-fixed/20 rounded-lg p-3 flex items-center gap-3">
+<span class="material-symbols-outlined text-on-tertiary-container text-lg">cleaning_services</span>
+<div>
+<p class="text-label-sm font-label-sm text-forest-deep font-semibold">Herbal Fumigation Protocol</p>
+<p class="text-body-sm font-body-sm text-on-surface-variant text-xs">Neem &amp; camphor fogging. Est. release: 14:30</p>
+</div>
+</div>
+<!-- Features Tags -->
+<div class="grid grid-cols-2 gap-2 text-body-sm font-body-sm text-on-surface-variant">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-base text-secondary">single_bed</span>
+<span class="">Twin Sharing Suite</span>
+</div>
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-base text-secondary">balcony</span>
+<span class="">Herbal Sun Porch</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Tariff & Action Footer -->
+<div class="p-5 pt-0">
+<div class="bg-surface-container-low rounded-lg p-3 flex items-center justify-between mb-4">
+<div>
+<span class="text-label-sm font-label-sm text-on-surface-variant block">Tariff Rate</span>
+<span class="text-headline-sm font-headline-sm text-primary font-bold">₹3,500 <span class="text-body-sm font-normal text-on-surface-variant">/ day</span></span>
+</div>
+<span class="text-label-sm font-label-sm text-on-tertiary-fixed-variant font-semibold">Ready in 45m</span>
+</div>
+<button class="w-full py-2.5 rounded-lg bg-surface-container text-on-surface hover:bg-surface-container-high text-label-md font-label-md transition-colors flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-base">task_alt</span>
+<span class="">Mark Ready for Admission</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- SECTION B: Non-AC Eco-Nature Herbal Cottages -->
+<div class="space-y-4 pb-8">
+<!-- Section Title & Badge -->
+<div class="flex items-center justify-between pb-2">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-lg bg-bark-brown text-on-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-lg">nature</span>
+</div>
+<div>
+<h2 class="text-headline-sm font-headline-sm text-primary">Non-AC Rooms</h2>
+<p class="text-body-sm font-body-sm text-on-surface-variant">Natural cross-ventilation, terracotta tile roofs, surrounded by Tulsi and aromatic medicinal flora</p>
+</div>
+</div>
+<span class="px-3 py-1 rounded-full bg-secondary-fixed text-on-secondary-fixed-variant text-label-sm font-label-sm">
+        20 Vacant / 4 Occupied
+      </span>
+</div>
+<!-- Non-AC Rooms Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
+<!-- Cottage Card 1: 102 Neem Cottage (Non-AC - Available) -->
+<div class="bg-surface-container-lowest rounded-xl shadow-sm hover:shadow-md transition-all flex flex-col justify-between overflow-hidden">
+<div>
+<!-- Header strip with subtle tone -->
+<div class="bg-sun-warmth/60 px-5 py-3.5 flex items-center justify-between">
+<div>
+<span class="text-label-sm font-label-sm text-bark-brown uppercase tracking-wider font-semibold">Eco-Zone 1 • Garden Ground</span>
+<h3 class="text-label-md font-label-md text-forest-deep">Room 102 - Neem Room (Non-AC)</h3>
+</div>
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-secondary-fixed text-on-secondary-fixed-variant text-label-sm font-label-sm font-semibold">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary animate-pulse"></span>
+              Available
+            </span>
+</div>
+<!-- Graphic Bed Canvas & Specs -->
+<div class="p-5 space-y-4">
+<!-- Bed Schematic SVG with Natural Bamboo motif -->
+<div class="h-28 bg-surface-container-low rounded-lg flex items-center justify-center p-3 relative overflow-hidden">
+<div class="absolute inset-0 bg-gradient-to-r from-transparent via-bark-brown/5 to-transparent"></div>
+<svg class="h-20 w-auto text-bark-brown" fill="none" viewBox="0 0 120 70" xmlns="http://www.w3.org/2000/svg">
+<!-- Bamboo Cane Headboard -->
+<rect fill="#606C38" height="44" rx="2" width="6" x="8" y="16"></rect>
+<rect fill="#FEFAE0" height="36" rx="1" width="3" x="11" y="20"></rect>
+<!-- Frame -->
+<rect fill="#edeeea" height="28" rx="4" stroke="#c1c8c2" stroke-width="1.5" width="86" x="14" y="26"></rect>
+<!-- Natural Cotton Quilt -->
+<rect fill="#FEFAE0" height="20" rx="2" width="76" x="20" y="30"></rect>
+<rect fill="#d8e2dc" height="20" opacity="0.6" rx="2" width="52" x="44" y="30"></rect>
+<!-- Cotton Pillows -->
+<rect fill="#ffffff" height="14" rx="2" width="16" x="22" y="33"></rect>
+<!-- Cane Nightstand with Fresh Brass Urn -->
+<rect fill="#606C38" height="22" opacity="0.8" rx="2" width="12" x="104" y="34"></rect>
+<path d="M109 30C109 28 111 27 111 27C111 27 113 28 113 30C113 32 109 32 109 30Z" fill="#ea9147"></path>
+<!-- Legs -->
+<rect fill="#606C38" height="10" rx="1" width="4" x="18" y="54"></rect>
+<rect fill="#606C38" height="10" rx="1" width="4" x="94" y="54"></rect>
+</svg>
+</div>
+<!-- Features Tags -->
+<div class="grid grid-cols-2 gap-2 text-body-sm font-body-sm text-on-surface-variant">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-base text-bark-brown">nest_cam_indoor</span>
+<span class="">Cross Ventilation</span>
+</div>
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-base text-bark-brown">yard</span>
+<span class="">Herbal Garden Patio</span>
+</div>
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-base text-bark-brown">shower</span>
+<span class="">Solar Hot Shower</span>
+</div>
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-base text-bark-brown">self_improvement</span>
+<span class="">Yoga Deck Access</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Tariff & Action Footer -->
+<div class="p-5 pt-0">
+<div class="bg-surface-container-low rounded-lg p-3 flex items-center justify-between mb-4">
+<div>
+<span class="text-label-sm font-label-sm text-on-surface-variant block">Tariff Rate</span>
+<span class="text-headline-sm font-headline-sm text-bark-brown font-bold">₹2,000 <span class="text-body-sm font-normal text-on-surface-variant">/ day</span></span>
+</div>
+<span class="text-label-sm font-label-sm text-on-surface-variant bg-surface-container px-2 py-0.5 rounded">Ayurvedic Diet incl.</span>
+</div>
+<button class="w-full py-2.5 rounded-lg bg-bark-brown text-on-primary hover:bg-opacity-95 text-label-md font-label-md transition-colors flex items-center justify-center gap-2 shadow-sm">
+<span class="material-symbols-outlined text-base">person_add</span>
+<span class="">Assign Patient</span>
+</button>
+</div>
+</div>
+<!-- Cottage Card 2: 201 Tulsi Haven (Non-AC - Available) -->
+<div class="bg-surface-container-lowest rounded-xl shadow-sm hover:shadow-md transition-all flex flex-col justify-between overflow-hidden">
+<div>
+<!-- Header strip with subtle tone -->
+<div class="bg-sun-warmth/60 px-5 py-3.5 flex items-center justify-between">
+<div>
+<span class="text-label-sm font-label-sm text-bark-brown uppercase tracking-wider font-semibold">Eco-Zone 2 • First Floor</span>
+<h3 class="text-label-md font-label-md text-forest-deep">Room 201 - Tulsi Haven (Non-AC)</h3>
+</div>
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-secondary-fixed text-on-secondary-fixed-variant text-label-sm font-label-sm font-semibold">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary animate-pulse"></span>
+              Available
+            </span>
+</div>
+<!-- Graphic Bed Canvas & Specs -->
+<div class="p-5 space-y-4">
+<div class="h-28 bg-surface-container-low rounded-lg flex items-center justify-center p-3 relative overflow-hidden">
+<div class="absolute inset-0 bg-gradient-to-r from-transparent via-secondary/5 to-transparent"></div>
+<svg class="h-20 w-auto text-secondary" fill="none" viewBox="0 0 120 70" xmlns="http://www.w3.org/2000/svg">
+<rect fill="#2b694d" height="44" rx="2" width="6" x="8" y="16"></rect>
+<rect fill="#ffffff" height="28" rx="4" stroke="#c1c8c2" stroke-width="1.5" width="86" x="14" y="26"></rect>
+<rect fill="#d8e2dc" height="20" rx="2" width="76" x="20" y="30"></rect>
+<rect fill="#b0f1cc" height="20" opacity="0.8" rx="2" width="46" x="50" y="30"></rect>
+<rect fill="#ffffff" height="14" rx="2" width="16" x="22" y="33"></rect>
+<rect fill="#2b694d" height="22" opacity="0.8" rx="2" width="12" x="104" y="34"></rect>
+<circle cx="110" cy="42" fill="#FEFAE0" r="1.5"></circle>
+<rect fill="#2b694d" height="10" rx="1" width="4" x="18" y="54"></rect>
+<rect fill="#2b694d" height="10" rx="1" width="4" x="94" y="54"></rect>
+</svg>
+</div>
+<!-- Features Tags -->
+<div class="grid grid-cols-2 gap-2 text-body-sm font-body-sm text-on-surface-variant">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-base text-secondary">single_bed</span>
+<span class="">Twin Room Setup</span>
+</div>
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-base text-secondary">eco</span>
+<span class="">Tulsi Garden Porch</span>
+</div>
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-base text-secondary">roofing</span>
+<span class="">Terracotta Clay Roof</span>
+</div>
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-base text-secondary">water_bottle</span>
+<span class="">Pure Copper Dispenser</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Tariff & Action Footer -->
+<div class="p-5 pt-0">
+<div class="bg-surface-container-low rounded-lg p-3 flex items-center justify-between mb-4">
+<div>
+<span class="text-label-sm font-label-sm text-on-surface-variant block">Tariff Rate</span>
+<span class="text-headline-sm font-headline-sm text-bark-brown font-bold">₹2,000 <span class="text-body-sm font-normal text-on-surface-variant">/ day</span></span>
+</div>
+<span class="text-label-sm font-label-sm text-on-secondary-container bg-secondary-fixed/50 px-2 py-0.5 rounded">Herbal Steam Access</span>
+</div>
+<button class="w-full py-2.5 rounded-lg bg-secondary text-on-secondary hover:bg-opacity-95 text-label-md font-label-md transition-colors flex items-center justify-center gap-2 shadow-sm">
+<span class="material-symbols-outlined text-base">person_add</span>
+<span class="">Assign Patient</span>
+</button>
+</div>
+</div>
+<!-- Cottage Card 3: 202 Jasmine Cottage (Non-AC - Occupied) -->
+<div class="bg-surface-container-lowest rounded-xl shadow-sm hover:shadow-md transition-all flex flex-col justify-between overflow-hidden">
+<div>
+<!-- Header strip -->
+<div class="bg-surface-container px-5 py-3.5 flex items-center justify-between">
+<div>
+<span class="text-label-sm font-label-sm text-on-surface-variant uppercase tracking-wider font-semibold">Eco-Zone 2 • First Floor</span>
+<h3 class="text-label-md font-label-md text-forest-deep">Room 202 - Jasmine Room (Non-AC)</h3>
+</div>
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-surface-variant text-on-surface-variant text-label-sm font-label-sm font-semibold">
+<span class="w-1.5 h-1.5 rounded-full bg-outline"></span>
+              Occupied
+            </span>
+</div>
+<!-- Graphic Bed Canvas & Specs -->
+<div class="p-5 space-y-4">
+<div class="h-28 bg-surface-container-low rounded-lg flex items-center justify-center p-3 relative overflow-hidden">
+<svg class="h-20 w-auto text-outline" fill="none" viewBox="0 0 120 70" xmlns="http://www.w3.org/2000/svg">
+<rect fill="#717973" height="44" rx="2" width="6" x="8" y="16"></rect>
+<rect fill="#e2e3df" height="28" rx="4" stroke="#c1c8c2" stroke-width="1.5" width="86" x="14" y="26"></rect>
+<rect fill="#ffffff" height="20" rx="2" width="76" x="20" y="30"></rect>
+<rect fill="#c1c8c2" height="20" opacity="0.6" rx="2" width="58" x="38" y="30"></rect>
+<rect fill="#d9dad7" height="14" rx="2" width="16" x="22" y="33"></rect>
+<rect fill="#717973" height="22" opacity="0.6" rx="2" width="12" x="104" y="34"></rect>
+<rect fill="#717973" height="10" rx="1" width="4" x="18" y="54"></rect>
+<rect fill="#717973" height="10" rx="1" width="4" x="94" y="54"></rect>
+</svg>
+</div>
+<!-- Current Occupant Details Pill -->
+<div class="bg-surface-container-low rounded-lg p-3 flex items-center justify-between">
+<div class="flex items-center gap-2.5">
+<span class="w-7 h-7 rounded-full bg-bark-brown text-on-primary flex items-center justify-center text-label-sm font-bold">SM</span>
+<div>
+<span class="text-label-sm font-label-sm text-forest-deep block leading-tight font-semibold">Mrs. Shanti Mishra</span>
+<span class="text-body-sm font-body-sm text-on-surface-variant text-xs">ID: BNC-7910 • Dr. Radhika</span>
+</div>
+</div>
+<span class="text-label-sm font-label-sm text-on-surface-variant bg-surface-container px-2 py-0.5 rounded">Day 11 of 14</span>
+</div>
+<!-- Features Tags -->
+<div class="grid grid-cols-2 gap-2 text-body-sm font-body-sm text-on-surface-variant">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-base text-outline">single_bed</span>
+<span class="">Single Non-AC</span>
+</div>
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-base text-outline">nature_people</span>
+<span class="">Jasmine Garden View</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Tariff & Action Footer -->
+<div class="p-5 pt-0">
+<div class="bg-surface-container-low rounded-lg p-3 flex items-center justify-between mb-4">
+<div>
+<span class="text-label-sm font-label-sm text-on-surface-variant block">Tariff Rate</span>
+<span class="text-headline-sm font-headline-sm text-forest-deep font-bold">₹2,000 <span class="text-body-sm font-normal text-on-surface-variant">/ day</span></span>
+</div>
+<span class="text-label-sm font-label-sm text-on-surface-variant">Discharge: Friday</span>
+</div>
+<div class="grid grid-cols-2 gap-2">
+<button class="py-2.5 rounded-lg bg-surface-container-high text-on-surface hover:bg-surface-variant text-label-md font-label-md transition-colors flex items-center justify-center gap-1">
+<span class="material-symbols-outlined text-base">visibility</span>
+<span class="">Patient Profile</span>
+</button>
+<button class="py-2.5 rounded-lg bg-surface-container text-on-secondary-container hover:bg-surface-container-high text-label-md font-label-md transition-colors flex items-center justify-center gap-1">
+<span class="material-symbols-outlined text-base">swap_horiz</span>
+<span class="">Shift Bed</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Live Occupancy & Housekeeping Realtime Banner -->
+
+</div></main>
+</div>
+
+
+</body></html>

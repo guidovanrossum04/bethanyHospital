@@ -1,0 +1,337 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    /* Material Design 3 Greenish Botanical Palette */
+    --color-primary: #0a3d2e;
+    --color-primary-container: #1b4332;
+    --color-on-primary: #ffffff;
+    --color-on-primary-container: #86af99;
+    --color-primary-fixed: #c1ecd4;
+    --color-primary-fixed-dim: #a5d0b9;
+    --color-on-primary-fixed: #002114;
+
+    --color-secondary: #2b694d;
+    --color-secondary-container: #b0f1cc;
+    --color-on-secondary: #ffffff;
+    --color-on-secondary-container: #1b4332;
+    --color-secondary-fixed: #b0f1cc;
+    --color-secondary-fixed-dim: #94d4b1;
+    --color-on-secondary-fixed: #002113;
+
+    --color-tertiary: #52634f;
+    --color-tertiary-container: #d5e8cf;
+    --color-on-tertiary: #ffffff;
+    --color-on-tertiary-container: #101f10;
+    --color-tertiary-fixed: #ffdcc4;
+    --color-tertiary-fixed-dim: #ffb781;
+    --color-on-tertiary-fixed: #2f1400;
+
+    --color-forest-deep: #081C15;
+    --color-sage-wash: #D8E2DC;
+    --color-bark-brown: #606C38;
+    --color-sun-warmth: #FEFAE0;
+
+    --color-surface: #f9faf6;
+    --color-surface-dim: #d9dad7;
+    --color-surface-bright: #f9faf6;
+    --color-surface-container-lowest: #ffffff;
+    --color-surface-container-low: #f3f4f0;
+    --color-surface-container: #edeeea;
+    --color-surface-container-high: #e7e9e5;
+    --color-surface-container-highest: #e2e3df;
+
+    --color-on-surface: #1a1c1a;
+    --color-on-surface-variant: #414844;
+    --color-outline: #717973;
+    --color-outline-variant: #c1c8c2;
+
+    --color-error: #ba1a1a;
+    --color-error-container: #ffdad6;
+    --color-on-error: #ffffff;
+    --color-on-error-container: #93000a;
+  }
+
+  /* Alternative CarePulse Clinical Blue */
+  .theme-carepulse {
+    --color-primary: #0b1c30;
+    --color-primary-container: #131b2e;
+    --color-on-primary: #ffffff;
+    --color-on-primary-container: #7c839b;
+    --color-primary-fixed: #dae2fd;
+    --color-primary-fixed-dim: #bec6e0;
+    --color-on-primary-fixed: #131b2e;
+
+    --color-secondary: #0058bc;
+    --color-secondary-container: #d8e2ff;
+    --color-on-secondary: #ffffff;
+    --color-on-secondary-container: #001a41;
+    --color-secondary-fixed: #d8e2ff;
+    --color-secondary-fixed-dim: #adc6ff;
+    --color-on-secondary-fixed: #001a41;
+
+    --color-tertiary: #0c9488;
+    --color-tertiary-container: #00201d;
+    --color-on-tertiary: #ffffff;
+    --color-on-tertiary-container: #0c9488;
+    --color-tertiary-fixed: #89f5e7;
+    --color-tertiary-fixed-dim: #6bd8cb;
+    --color-on-tertiary-fixed: #00201d;
+
+    --color-forest-deep: #0b1c30;
+    --color-sage-wash: #d3e4fe;
+    --color-bark-brown: #3f465c;
+    --color-sun-warmth: #e5eeff;
+
+    --color-surface: #f8f9ff;
+    --color-surface-dim: #cbdbf5;
+    --color-surface-bright: #f8f9ff;
+    --color-surface-container-lowest: #ffffff;
+    --color-surface-container-low: #eff4ff;
+    --color-surface-container: #e5eeff;
+    --color-surface-container-high: #dce9ff;
+    --color-surface-container-highest: #d3e4fe;
+
+    --color-on-surface: #0b1c30;
+    --color-on-surface-variant: #45464d;
+    --color-outline: #76777d;
+    --color-outline-variant: #c6c6cd;
+  }
+}
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  background: linear-gradient(135deg, #eef7f1 0%, #f7fbf9 45%, #e1f3e7 100%);
+  background-attachment: fixed;
+  color: var(--color-on-surface);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Material Symbols configuration */
+.material-symbols-outlined {
+  font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+  display: inline-block;
+  vertical-align: middle;
+  line-height: 1;
+}
+
+.material-symbols-fill {
+  font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+}
+
+/* Material Design 3 Responsive Button & State Layers with Green Accent */
+.md-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  font-weight: 600;
+  border-radius: 9999px; /* M3 Pill shape */
+  transition: all 0.2s cubic-bezier(0.2, 0, 0, 1);
+  position: relative;
+  overflow: hidden;
+  user-select: none;
+  cursor: pointer;
+  white-space: nowrap;
+  outline: none;
+  min-height: 2.5rem;
+  padding: 0.5rem 1.25rem;
+  font-size: 0.8125rem;
+  box-shadow: 0 1px 2px rgba(6, 78, 59, 0.08);
+}
+
+.md-btn:active {
+  transform: scale(0.97);
+}
+
+.md-btn:focus-visible {
+  outline: 2px solid #059669;
+  outline-offset: 2px;
+}
+
+/* Responsive sizing */
+@media (max-width: 640px) {
+  .md-btn {
+    min-height: 2.75rem; /* Touch friendly 44px min height */
+    padding: 0.625rem 1rem;
+    font-size: 0.8125rem;
+  }
+}
+
+/* M3 Filled Button (Rich Emerald Green) */
+.md-btn-filled {
+  background-color: #065f46; /* emerald-800 */
+  color: #ffffff;
+}
+.md-btn-filled:hover {
+  background-color: #064e3b; /* emerald-900 */
+  box-shadow: 0 4px 14px rgba(6, 95, 70, 0.3);
+}
+
+/* M3 Tonal Button (Light Emerald Mint) */
+.md-btn-tonal {
+  background-color: #d1fae5; /* emerald-100 */
+  color: #064e3b; /* emerald-900 */
+  border: 1px solid #a7f3d0;
+}
+.md-btn-tonal:hover {
+  background-color: #a7f3d0; /* emerald-200 */
+  color: #022c22;
+  box-shadow: 0 2px 8px rgba(5, 150, 105, 0.16);
+}
+
+/* M3 Outlined Button (Crisp White with Green Border and Text) */
+.md-btn-outlined {
+  background-color: #ffffff;
+  border: 1.5px solid #059669;
+  color: #065f46;
+}
+.md-btn-outlined:hover {
+  background-color: #ecfdf5;
+  border-color: #047857;
+  color: #047857;
+}
+
+/* M3 Elevated Surface Button */
+.md-btn-elevated {
+  background-color: #ffffff;
+  border: 1px solid #d1fae5;
+  color: #065f46;
+  box-shadow: 0 2px 6px rgba(5, 150, 105, 0.08);
+}
+.md-btn-elevated:hover {
+  background-color: #f0fdf4;
+  box-shadow: 0 4px 12px rgba(5, 150, 105, 0.16);
+}
+
+/* M3 Interactive Filter Chip */
+.md-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.375rem;
+  border-radius: 9999px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 0.375rem 0.875rem;
+  transition: all 0.15s ease-out;
+  cursor: pointer;
+  user-select: none;
+  background-color: #ffffff;
+  border: 1px solid #d1fae5;
+  color: #065f46;
+}
+.md-chip:hover {
+  background-color: #ecfdf5;
+}
+.md-chip-selected {
+  background-color: #065f46 !important;
+  color: #ffffff !important;
+  border-color: #065f46 !important;
+}
+.md-chip:active {
+  transform: scale(0.96);
+}
+
+/* Material Design 3 Card Tokens & Elevation */
+.md-card {
+  background-color: #ffffff;
+  border-radius: 1rem; /* 16px M3 surface radius */
+  border: 1px solid rgba(226, 232, 240, 0.95);
+  box-shadow: 0 1px 3px rgba(6, 78, 59, 0.04), 0 4px 16px rgba(6, 78, 59, 0.03);
+  transition: box-shadow 0.2s cubic-bezier(0.2, 0, 0, 1), transform 0.2s cubic-bezier(0.2, 0, 0, 1), border-color 0.2s ease;
+  overflow: hidden;
+}
+
+.md-card-interactive {
+  cursor: pointer;
+}
+.md-card-interactive:hover {
+  border-color: #a7f3d0;
+  box-shadow: 0 4px 20px rgba(6, 78, 59, 0.08), 0 1px 4px rgba(6, 78, 59, 0.04);
+  transform: translateY(-2px);
+}
+
+.md-card-header {
+  padding: 1.25rem 1.5rem;
+  border-bottom: 1px solid rgba(241, 245, 249, 1);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.md-card-body {
+  padding: 1.25rem 1.5rem;
+}
+
+/* Material Design 3 Responsive Tables */
+.md-table-container {
+  width: 100%;
+  overflow-x: auto;
+  border-radius: 0.875rem;
+  border: 1px solid rgba(226, 232, 240, 0.9);
+  background-color: #ffffff;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.02);
+}
+
+.md-table {
+  width: 100%;
+  text-align: left;
+  border-collapse: collapse;
+  font-size: 0.875rem;
+}
+
+.md-table th {
+  padding: 0.875rem 1.25rem;
+  background-color: #f8fafc;
+  color: #475569;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  border-bottom: 1px solid #e2e8f0;
+  white-space: nowrap;
+}
+
+.md-table td {
+  padding: 1rem 1.25rem;
+  border-bottom: 1px solid #f1f5f9;
+  color: #1e293b;
+  vertical-align: middle;
+}
+
+.md-table tr:last-child td {
+  border-bottom: none;
+}
+
+.md-table tbody tr {
+  transition: background-color 0.15s ease;
+}
+
+.md-table tbody tr:hover {
+  background-color: rgba(236, 253, 245, 0.5); /* subtle emerald highlight */
+}
+
+/* Custom scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: rgba(216, 226, 220, 0.3);
+}
+::-webkit-scrollbar-thumb {
+  background: #c1c8c2;
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #a5d0b9;
+}
+
+/* Opaque White Modal Backdrop */
+.md-modal-backdrop {
+  background-color: rgba(255, 255, 255, 0.94);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}

@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+
+<html class="h-full" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Bethany Nature Care - Edit Patient Record</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "bark-brown": "#606C38",
+            "primary-fixed": "#c1ecd4",
+            "on-secondary-fixed": "#002113",
+            "on-primary-container": "#86af99",
+            "primary-container": "#1b4332",
+            "on-tertiary-fixed-variant": "#6f3800",
+            "tertiary-fixed-dim": "#ffb781",
+            "surface": "#f9faf6",
+            "surface-container-lowest": "#ffffff",
+            "on-tertiary-fixed": "#2f1400",
+            "on-tertiary-container": "#ea9147",
+            "on-primary": "#ffffff",
+            "secondary-fixed": "#b0f1cc",
+            "on-secondary-container": "#327053",
+            "surface-bright": "#f9faf6",
+            "tertiary-container": "#5f2f00",
+            "on-secondary": "#ffffff",
+            "on-primary-fixed-variant": "#274e3d",
+            "surface-variant": "#e2e3df",
+            "tertiary": "#3f1d00",
+            "surface-dim": "#d9dad7",
+            "on-error": "#ffffff",
+            "outline-variant": "#c1c8c2",
+            "on-primary-fixed": "#002114",
+            "sun-warmth": "#FEFAE0",
+            "secondary": "#2b694d",
+            "error-container": "#ffdad6",
+            "surface-container-low": "#f3f4f0",
+            "inverse-surface": "#2e312f",
+            "on-secondary-fixed-variant": "#0c5136",
+            "inverse-primary": "#a5d0b9",
+            "on-surface-variant": "#414844",
+            "secondary-fixed-dim": "#94d4b1",
+            "secondary-container": "#b0f1cc",
+            "on-background": "#1a1c1a",
+            "background": "#f9faf6",
+            "error": "#ba1a1a",
+            "forest-deep": "#081C15",
+            "on-error-container": "#93000a",
+            "primary": "#012d1d",
+            "surface-container-high": "#e7e9e5",
+            "surface-tint": "#3f6653",
+            "on-tertiary": "#ffffff",
+            "surface-container-highest": "#e2e3df",
+            "tertiary-fixed": "#ffdcc4",
+            "sage-wash": "#D8E2DC",
+            "inverse-on-surface": "#f0f1ed",
+            "on-surface": "#1a1c1a",
+            "surface-container": "#edeeea",
+            "outline": "#717973",
+            "primary-fixed-dim": "#a5d0b9"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "fontFamily": {
+            "label-md": ["Inter"],
+            "body-sm": ["Inter"],
+            "body-lg": ["Inter"],
+            "label-sm": ["Inter"],
+            "headline-lg-mobile": ["Inter"],
+            "headline-md": ["Inter"],
+            "headline-sm": ["Inter"],
+            "headline-lg": ["Inter"],
+            "body-md": ["Inter"]
+          },
+          "fontSize": {
+            "label-md": ["14px", { "lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "600" }],
+            "body-sm": ["14px", { "lineHeight": "20px", "fontWeight": "400" }],
+            "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+            "label-sm": ["12px", { "lineHeight": "16px", "fontWeight": "500" }],
+            "headline-lg-mobile": ["24px", { "lineHeight": "32px", "fontWeight": "700" }],
+            "headline-md": ["24px", { "lineHeight": "32px", "fontWeight": "600" }],
+            "headline-sm": ["20px", { "lineHeight": "28px", "fontWeight": "600" }],
+            "headline-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+            "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }]
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-background text-on-surface antialiased flex h-full overflow-hidden">
+<!-- SideNavBar Component -->
+<aside class="fixed top-0 left-0 h-full w-72 z-40 flex flex-col justify-between p-6 bg-surface-container-low border-r border-sage-wash/40 shrink-0">
+<!-- Brand Header -->
+<div>
+<div class="flex items-center gap-3 px-2 mb-8">
+<div class="w-10 h-10 rounded-xl bg-primary flex items-center justify-center text-primary-fixed shadow-sm">
+<span class="material-symbols-outlined" data-icon="spa">spa</span>
+</div>
+<div>
+<h1 class="font-headline-sm text-headline-sm text-forest-deep font-bold tracking-tight">Bethany Nature Care</h1>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Clinical Management</p>
+</div>
+</div>
+<!-- Navigation Tabs -->
+<nav aria-label="Main Navigation" class="space-y-1.5">
+<!-- Dashboard -->
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-on-surface-variant font-label-md text-label-md hover:bg-surface-container-high transition-colors" href="#">
+<span class="material-symbols-outlined text-outline" data-icon="space_dashboard">space_dashboard</span>
+          Dashboard
+        </a>
+<!-- My Appointments -->
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-on-surface-variant font-label-md text-label-md hover:bg-surface-container-high transition-colors" href="#">
+<span class="material-symbols-outlined text-outline" data-icon="calendar_month">calendar_month</span>
+          My Appointments
+        </a>
+<!-- Patients & Consultations (ACTIVE TAB) -->
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg bg-primary-container text-sun-warmth font-label-md text-label-md transition-colors shadow-sm" href="#">
+<span class="material-symbols-outlined text-secondary-fixed" data-icon="group" data-weight="fill" style="font-variation-settings: 'FILL' 1;">group</span>
+          Patients &amp; Consultations
+        </a>
+<!-- Treatment Plans -->
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-on-surface-variant font-label-md text-label-md hover:bg-surface-container-high transition-colors" href="#">
+<span class="material-symbols-outlined text-outline" data-icon="spa">spa</span>
+          Treatment Plans
+        </a>
+<!-- Reports -->
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-on-surface-variant font-label-md text-label-md hover:bg-surface-container-high transition-colors" href="#">
+<span class="material-symbols-outlined text-outline" data-icon="analytics">analytics</span>
+          Reports
+        </a>
+<!-- Settings -->
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-on-surface-variant font-label-md text-label-md hover:bg-surface-container-high transition-colors" href="#">
+<span class="material-symbols-outlined text-outline" data-icon="settings">settings</span>
+          Settings
+        </a>
+</nav>
+</div>
+<!-- User / Logout Footer -->
+<div class="pt-6 border-t border-sage-wash/40">
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-on-surface-variant font-label-md text-label-md hover:bg-surface-container-high transition-colors" href="#">
+<span class="material-symbols-outlined text-outline" data-icon="logout">logout</span>
+        Logout
+      </a>
+</div>
+</aside>
+<!-- Main Canvas Wrapper -->
+<div class="ml-72 flex-1 flex flex-col h-full overflow-hidden bg-background">
+<!-- TopNavBar Component -->
+<header class="h-16 px-8 flex justify-between items-center w-full sticky top-0 z-30 bg-surface border-b border-sage-wash/40 shrink-0">
+<div class="flex items-center gap-4">
+<div class="flex items-center gap-2 text-on-surface-variant font-label-sm text-label-sm">
+<span>Patients &amp; Consultations</span>
+<span class="material-symbols-outlined text-[16px]" data-icon="chevron_right">chevron_right</span>
+<span class="text-primary font-semibold">Robert Chen (BNC-1042)</span>
+<span class="material-symbols-outlined text-[16px]" data-icon="chevron_right">chevron_right</span>
+<span class="text-secondary font-semibold">Update Record</span>
+</div>
+</div>
+<!-- Trailing Action Cluster -->
+<div class="flex items-center gap-6">
+<div class="flex items-center gap-2 px-3 py-1.5 rounded-full bg-surface-container font-label-sm text-label-sm text-on-surface-variant">
+<span class="material-symbols-outlined text-[18px] text-bark-brown" data-icon="calendar_today">calendar_today</span>
+<span>Today: Oct 24, 2024</span>
+</div>
+<div class="flex items-center gap-2 text-outline">
+<button class="p-2 rounded-full hover:bg-surface-container text-on-surface-variant transition-colors" title="Notifications" type="button">
+<span class="material-symbols-outlined text-[20px]" data-icon="notifications">notifications</span>
+</button>
+<button class="p-2 rounded-full hover:bg-surface-container text-on-surface-variant transition-colors" title="Help &amp; Clinical Docs" type="button">
+<span class="material-symbols-outlined text-[20px]" data-icon="help">help</span>
+</button>
+</div>
+<div class="h-6 w-px bg-sage-wash"></div>
+<!-- Doctor Profile Badge -->
+<div class="flex items-center gap-3">
+<div class="text-right">
+<div class="font-label-md text-label-md text-forest-deep leading-tight">Dr. Sarah Jenkins</div>
+<div class="font-label-sm text-label-sm text-bark-brown font-medium">Ayurvedic Physician</div>
+</div>
+<div class="w-9 h-9 rounded-full bg-secondary-container border border-secondary/20 flex items-center justify-center text-on-secondary-container font-bold text-sm">
+            SJ
+          </div>
+</div>
+</div>
+</header>
+<!-- Page Content Area -->
+<main class="flex-1 overflow-y-auto px-8 py-8 space-y-6">
+<!-- Title & Context Ribbon -->
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-4 pb-2">
+<div>
+<div class="flex items-center gap-3">
+<h2 class="font-headline-lg text-headline-lg text-forest-deep tracking-tight">Edit Patient Record - Robert Chen (BNC-1042)</h2>
+<span class="px-2.5 py-1 rounded-full bg-secondary-fixed text-on-secondary-fixed font-label-sm text-label-sm flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span> In-Patient Active
+            </span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant mt-1">Holistic Panchakarma Therapy &amp; Chronic Wellness Rehabilitation Program</p>
+</div>
+<div class="flex items-center gap-3">
+<button class="px-4 py-2.5 rounded-lg border border-sage-wash text-on-surface font-label-md text-label-md hover:bg-surface-container transition-colors flex items-center gap-2 bg-surface" type="button">
+<span class="material-symbols-outlined text-[18px]" data-icon="history">history</span>
+            Export Audit Trail
+          </button>
+<button class="px-4 py-2.5 rounded-lg bg-surface-container text-primary font-label-md text-label-md hover:bg-sage-wash/60 transition-colors flex items-center gap-2 border border-sage-wash/50" type="button">
+<span class="material-symbols-outlined text-[18px]" data-icon="visibility">visibility</span>
+            Clinical Chart View
+          </button>
+</div>
+</div>
+<!-- Two-Column Grid Layout -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+<!-- LEFT COLUMN: Form - Update Patient Details (7 Cols) -->
+<div class="lg:col-span-7 space-y-6">
+<form class="space-y-6">
+<!-- Section 1: Personal Details Card -->
+<div class="bg-surface-container-lowest rounded-xl border border-sage-wash/60 overflow-hidden shadow-sm">
+<div class="px-6 py-4 bg-sun-warmth/60 border-b border-sage-wash/40 flex items-center justify-between">
+<div class="flex items-center gap-2 text-forest-deep">
+<span class="material-symbols-outlined text-[20px] text-bark-brown" data-icon="person">person</span>
+<h3 class="font-headline-sm text-headline-sm">Personal Details</h3>
+</div>
+<span class="font-label-sm text-label-sm text-outline">Bio &amp; Identification</span>
+</div>
+<div class="p-6 space-y-5">
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+<!-- Full Name -->
+<div>
+<label class="block font-label-md text-label-md text-forest-deep mb-1.5">Full Name</label>
+<input class="w-full rounded-lg border-bark-brown/30 bg-surface focus:border-secondary focus:ring-1 focus:ring-secondary font-body-md text-body-md text-on-surface px-3.5 py-2.5 transition" type="text" value="Robert Chen"/>
+</div>
+<!-- Date of Birth / Age -->
+<div>
+<label class="block font-label-md text-label-md text-forest-deep mb-1.5">Date of Birth / Age</label>
+<div class="relative">
+<input class="w-full rounded-lg border-bark-brown/30 bg-surface focus:border-secondary focus:ring-1 focus:ring-secondary font-body-md text-body-md text-on-surface px-3.5 py-2.5 transition" type="text" value="Jun 14, 1978 (46 Yrs)"/>
+<span class="material-symbols-outlined absolute right-3 top-3 text-outline text-[20px]" data-icon="cake">cake</span>
+</div>
+</div>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+<!-- Gender -->
+<div>
+<label class="block font-label-md text-label-md text-forest-deep mb-1.5">Gender</label>
+<select class="w-full rounded-lg border-bark-brown/30 bg-surface focus:border-secondary focus:ring-1 focus:ring-secondary font-body-md text-body-md text-on-surface px-3.5 py-2.5 transition">
+<option selected="">Male</option>
+<option>Female</option>
+<option>Non-Binary / Other</option>
+<option>Prefer not to say</option>
+</select>
+</div>
+<!-- Phone Number -->
+<div>
+<label class="block font-label-md text-label-md text-forest-deep mb-1.5">Phone Number</label>
+<div class="relative">
+<input class="w-full rounded-lg border-bark-brown/30 bg-surface focus:border-secondary focus:ring-1 focus:ring-secondary font-body-md text-body-md text-on-surface px-3.5 py-2.5 transition" type="tel" value="+1 (555) 382-9014"/>
+<span class="material-symbols-outlined absolute right-3 top-3 text-outline text-[20px]" data-icon="call">call</span>
+</div>
+</div>
+</div>
+<!-- Emergency Contact & Relation -->
+<div>
+<label class="block font-label-md text-label-md text-forest-deep mb-1.5">Emergency Contact &amp; Relation</label>
+<div class="grid grid-cols-1 sm:grid-cols-12 gap-3">
+<input class="sm:col-span-5 rounded-lg border-bark-brown/30 bg-surface focus:border-secondary focus:ring-1 focus:ring-secondary font-body-md text-body-md text-on-surface px-3.5 py-2.5 transition" placeholder="Contact Name" type="text" value="Elena Chen"/>
+<input class="sm:col-span-3 rounded-lg border-bark-brown/30 bg-surface focus:border-secondary focus:ring-1 focus:ring-secondary font-body-md text-body-md text-on-surface px-3.5 py-2.5 transition" placeholder="Relationship" type="text" value="Spouse"/>
+<input class="sm:col-span-4 rounded-lg border-bark-brown/30 bg-surface focus:border-secondary focus:ring-1 focus:ring-secondary font-body-md text-body-md text-on-surface px-3.5 py-2.5 transition" placeholder="Phone" type="tel" value="+1 (555) 382-9022"/>
+</div>
+</div>
+</div>
+</div>
+<!-- Section 2: Clinical & Wellness Classification Card -->
+<div class="bg-surface-container-lowest rounded-xl border border-sage-wash/60 overflow-hidden shadow-sm">
+<div class="px-6 py-4 bg-sun-warmth/60 border-b border-sage-wash/40 flex items-center justify-between">
+<div class="flex items-center gap-2 text-forest-deep">
+<span class="material-symbols-outlined text-[20px] text-bark-brown" data-icon="vital_signs">vital_signs</span>
+<h3 class="font-headline-sm text-headline-sm">Clinical &amp; Wellness Classification</h3>
+</div>
+<span class="font-label-sm text-label-sm text-bark-brown font-semibold bg-sun-warmth px-2 py-0.5 rounded border border-bark-brown/20">Ayurvedic Diagnostics</span>
+</div>
+<div class="p-6 space-y-5">
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+<!-- Dosha / Constitution -->
+<div>
+<label class="block font-label-md text-label-md text-forest-deep mb-1.5">Dosha / Constitution</label>
+<div class="relative">
+<select class="w-full rounded-lg border-bark-brown/30 bg-surface focus:border-secondary focus:ring-1 focus:ring-secondary font-body-md text-body-md text-on-surface px-3.5 py-2.5 transition">
+<option>Vata Dominant</option>
+<option>Pitta Dominant</option>
+<option>Kapha Dominant</option>
+<option selected="">Vata-Pitta dominant</option>
+<option>Pitta-Kapha dominant</option>
+<option>Tridoshic Balanced</option>
+</select>
+</div>
+<div class="flex gap-2 mt-2">
+<span class="inline-flex items-center px-2 py-0.5 rounded text-[11px] font-medium bg-surface-container text-on-surface-variant border border-sage-wash">Vata (55%)</span>
+<span class="inline-flex items-center px-2 py-0.5 rounded text-[11px] font-medium bg-surface-container text-on-surface-variant border border-sage-wash">Pitta (35%)</span>
+<span class="inline-flex items-center px-2 py-0.5 rounded text-[11px] font-medium bg-surface-container text-on-surface-variant border border-sage-wash">Kapha (10%)</span>
+</div>
+</div>
+<!-- Blood Group -->
+<div>
+<label class="block font-label-md text-label-md text-forest-deep mb-1.5">Blood Group</label>
+<select class="w-full rounded-lg border-bark-brown/30 bg-surface focus:border-secondary focus:ring-1 focus:ring-secondary font-body-md text-body-md text-on-surface px-3.5 py-2.5 transition">
+<option>A+</option>
+<option>A-</option>
+<option>B+</option>
+<option>B-</option>
+<option>AB+</option>
+<option>AB-</option>
+<option selected="">O+</option>
+<option>O-</option>
+</select>
+</div>
+</div>
+<!-- Known Allergies -->
+<div>
+<label class="block font-label-md text-label-md text-forest-deep mb-1.5">Known Allergies</label>
+<input class="w-full rounded-lg border-bark-brown/30 bg-surface focus:border-secondary focus:ring-1 focus:ring-secondary font-body-md text-body-md text-on-surface px-3.5 py-2.5 transition" type="text" value="Peanut, Shellfish, Dust"/>
+<p class="font-label-sm text-label-sm text-outline mt-1.5">Separate multiple allergens with commas. Includes botanical oil and dietary contraindications.</p>
+</div>
+<!-- Chronic Conditions -->
+<div>
+<label class="block font-label-md text-label-md text-forest-deep mb-1.5">Chronic Conditions</label>
+<input class="w-full rounded-lg border-bark-brown/30 bg-surface focus:border-secondary focus:ring-1 focus:ring-secondary font-body-md text-body-md text-on-surface px-3.5 py-2.5 transition" type="text" value="Hypertension, Mild Lumbar Spondylosis"/>
+</div>
+</div>
+</div>
+<!-- Section 3: Ongoing Therapies / Room Allocation Card -->
+<div class="bg-surface-container-lowest rounded-xl border border-sage-wash/60 overflow-hidden shadow-sm">
+<div class="px-6 py-4 bg-sun-warmth/60 border-b border-sage-wash/40 flex items-center justify-between">
+<div class="flex items-center gap-2 text-forest-deep">
+<span class="material-symbols-outlined text-[20px] text-bark-brown" data-icon="meeting_room">meeting_room</span>
+<h3 class="font-headline-sm text-headline-sm">Therapies &amp; Campus Allocation</h3>
+</div>
+<span class="font-label-sm text-label-sm text-outline">In-Patient Residency</span>
+</div>
+<div class="p-6 space-y-5">
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+<!-- Assigned Room/Bed -->
+<div>
+<label class="block font-label-md text-label-md text-forest-deep mb-1.5">Assigned Room / Bed</label>
+<select class="w-full rounded-lg border-bark-brown/30 bg-surface focus:border-secondary focus:ring-1 focus:ring-secondary font-body-md text-body-md text-on-surface px-3.5 py-2.5 transition">
+<option selected="">Room 101 - Lotus Suite (AC)</option>
+<option>Room 102 - Cedar Cottage (Non-AC)</option>
+<option>Room 205 - Jasmine Pavilion (AC)</option>
+<option>Room 304 - Bamboo Garden Room</option>
+<option>Out-Patient / Day Care Only</option>
+</select>
+</div>
+<!-- Dietary Preference -->
+<div>
+<label class="block font-label-md text-label-md text-forest-deep mb-1.5">Dietary Preference</label>
+<select class="w-full rounded-lg border-bark-brown/30 bg-surface focus:border-secondary focus:ring-1 focus:ring-secondary font-body-md text-body-md text-on-surface px-3.5 py-2.5 transition">
+<option>Standard Ayurvedic Vegetarian</option>
+<option selected="">Strict Sattvic Vegetarian</option>
+<option>Kitchari Detox Cleanse Protocol</option>
+<option>Low-Sodium Pitta Pacifying</option>
+<option>Raw Juicing &amp; Herbal Broth</option>
+</select>
+</div>
+</div>
+</div>
+</div>
+<!-- Section 4: Mandatory Audit Reason Note Card -->
+<div class="bg-surface-container-lowest rounded-xl border border-secondary/40 p-6 shadow-sm ring-1 ring-secondary/20">
+<div class="flex items-start gap-3 mb-3">
+<span class="material-symbols-outlined text-secondary mt-0.5 text-[22px]" data-icon="edit_note">edit_note</span>
+<div>
+<label class="block font-label-md text-label-md text-forest-deep">
+                    Reason for Update Note <span class="text-error font-bold">*</span>
+</label>
+<p class="font-label-sm text-label-sm text-on-surface-variant mt-0.5">
+                    Clinical Governance Protocol requires an explicit audit log reason for every modification made to active patient records.
+                  </p>
+</div>
+</div>
+<textarea class="w-full rounded-lg border-bark-brown/40 bg-surface focus:border-secondary focus:ring-2 focus:ring-secondary/20 font-body-md text-body-md text-on-surface px-3.5 py-2.5 transition" placeholder="State reason for changes (e.g. Updated dosage tolerance and changed dietary protocol for monsoon season)" required="" rows="3">Updated dosage tolerance and changed dietary protocol for monsoon season</textarea>
+<div class="flex justify-between items-center mt-2 font-label-sm text-label-sm text-outline">
+<span>Field will be cryptographically attributed to Dr. Sarah Jenkins</span>
+<span>72 / 250 chars</span>
+</div>
+</div>
+<!-- Form Action Footer -->
+<div class="flex items-center justify-end gap-4 pt-2 pb-6">
+<button class="px-6 py-3 rounded-lg border border-sage-wash bg-surface text-on-surface font-label-md text-label-md hover:bg-surface-container-high transition-colors" type="button">
+                Cancel / Back
+              </button>
+<button class="px-8 py-3 rounded-lg bg-forest-deep text-on-primary font-label-md text-label-md hover:bg-primary-container transition-all shadow-sm active:scale-[0.99] flex items-center gap-2" type="submit">
+<span class="material-symbols-outlined text-[18px]" data-icon="check_circle">check_circle</span>
+                Save Changes
+              </button>
+</div>
+</form>
+</div>
+<!-- RIGHT COLUMN: Audit Log & Change History (5 Cols) -->
+<div class="lg:col-span-5 space-y-6">
+<!-- Audit Card Header & Container -->
+<div class="bg-surface-container-lowest rounded-xl border border-sage-wash/60 overflow-hidden shadow-sm sticky top-24">
+<div class="px-6 py-4 bg-sun-warmth/60 border-b border-sage-wash/40 flex items-center justify-between">
+<div class="flex items-center gap-2 text-forest-deep">
+<span class="material-symbols-outlined text-[20px] text-bark-brown" data-icon="verified_user">verified_user</span>
+<h3 class="font-headline-sm text-headline-sm">Patient Details Audit &amp; Revision History</h3>
+</div>
+<span class="font-label-sm text-label-sm px-2 py-0.5 rounded-full bg-secondary-fixed text-on-secondary-fixed font-semibold">4 Logs Recorded</span>
+</div>
+<!-- Audit Trail Timeline Content -->
+<div class="p-6">
+<div class="relative border-l-2 border-sage-wash ml-3.5 space-y-8 pl-6 my-2">
+<!-- Entry 1 (Most Recent) -->
+<div class="relative group">
+<!-- Timeline Node -->
+<div class="absolute -left-[31px] top-1 w-4 h-4 rounded-full bg-secondary ring-4 ring-secondary-fixed/50 flex items-center justify-center"></div>
+<div class="flex items-center justify-between mb-1.5">
+<span class="font-label-md text-label-md text-forest-deep font-semibold">Today, 10:15 AM</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px] text-bark-brown" data-icon="stethoscope">stethoscope</span>
+                      Dr. Sarah Jenkins
+                    </span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-2.5">
+                    Updated Dietary Preference to align with Panchakarma digestive prep.
+                  </p>
+<!-- Before/After Pill Tags -->
+<div class="bg-surface-container-low p-3 rounded-lg border border-sage-wash/50 space-y-2">
+<div class="font-label-sm text-label-sm text-outline font-medium">Field: Dietary Preference</div>
+<div class="flex items-center gap-2 flex-wrap">
+<span class="px-2.5 py-1 rounded bg-surface-container-high text-on-surface-variant line-through font-label-sm text-label-sm">Standard Veg</span>
+<span class="material-symbols-outlined text-outline text-[16px]" data-icon="arrow_forward">arrow_forward</span>
+<span class="px-2.5 py-1 rounded bg-secondary-fixed text-on-secondary-fixed font-label-sm text-label-sm font-semibold border border-secondary/20">Strict Sattvic Vegetarian</span>
+</div>
+</div>
+</div>
+<!-- Entry 2 -->
+<div class="relative group">
+<!-- Timeline Node -->
+<div class="absolute -left-[31px] top-1 w-4 h-4 rounded-full bg-surface-container-highest ring-4 ring-surface-variant flex items-center justify-center"></div>
+<div class="flex items-center justify-between mb-1.5">
+<span class="font-label-md text-label-md text-forest-deep font-semibold">Oct 10, 2024, 02:30 PM</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px] text-outline" data-icon="badge">badge</span>
+                      Receptionist Sarah Jenkins
+                    </span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-2.5">
+                    Updated Contact Number &amp; Emergency Contact details upon verification.
+                  </p>
+<!-- Before/After Pill Tags -->
+<div class="bg-surface-container-low p-3 rounded-lg border border-sage-wash/50 space-y-2">
+<div class="font-label-sm text-label-sm text-outline font-medium">Fields: Phone &amp; Emergency Contact</div>
+<div class="space-y-1.5">
+<div class="flex items-center gap-2 flex-wrap">
+<span class="text-[12px] text-outline">Phone:</span>
+<span class="px-2 py-0.5 rounded bg-surface-container-high text-on-surface-variant line-through text-[12px]">...-8801</span>
+<span class="material-symbols-outlined text-outline text-[14px]" data-icon="arrow_forward">arrow_forward</span>
+<span class="px-2 py-0.5 rounded bg-surface-bright text-on-surface text-[12px] font-medium border border-sage-wash">+1 (555) 382-9014</span>
+</div>
+<div class="flex items-center gap-2 flex-wrap">
+<span class="text-[12px] text-outline">Contact:</span>
+<span class="px-2 py-0.5 rounded bg-surface-container-high text-on-surface-variant line-through text-[12px]">Robert Chen Sr.</span>
+<span class="material-symbols-outlined text-outline text-[14px]" data-icon="arrow_forward">arrow_forward</span>
+<span class="px-2 py-0.5 rounded bg-surface-bright text-on-surface text-[12px] font-medium border border-sage-wash">Elena Chen (Spouse)</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Entry 3 -->
+<div class="relative group">
+<!-- Timeline Node -->
+<div class="absolute -left-[31px] top-1 w-4 h-4 rounded-full bg-surface-container-highest ring-4 ring-surface-variant flex items-center justify-center"></div>
+<div class="flex items-center justify-between mb-1.5">
+<span class="font-label-md text-label-md text-forest-deep font-semibold">Sep 15, 2024, 11:00 AM</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px] text-bark-brown" data-icon="stethoscope">stethoscope</span>
+                      Dr. Sarah Jenkins
+                    </span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-2.5">
+                    Added Chronic Condition after spinal consultation &amp; diagnostic report.
+                  </p>
+<!-- Before/After Pill Tags -->
+<div class="bg-surface-container-low p-3 rounded-lg border border-sage-wash/50 space-y-2">
+<div class="font-label-sm text-label-sm text-outline font-medium">Field: Chronic Conditions</div>
+<div class="flex items-center gap-2 flex-wrap">
+<span class="px-2.5 py-1 rounded bg-surface-container-high text-on-surface-variant line-through font-label-sm text-label-sm">Hypertension</span>
+<span class="material-symbols-outlined text-outline text-[16px]" data-icon="arrow_forward">arrow_forward</span>
+<span class="px-2.5 py-1 rounded bg-tertiary-fixed text-on-tertiary-fixed font-label-sm text-label-sm font-semibold border border-tertiary-fixed-dim/40">+ Mild Lumbar Spondylosis</span>
+</div>
+</div>
+</div>
+<!-- Entry 4 (Creation) -->
+<div class="relative group">
+<!-- Timeline Node -->
+<div class="absolute -left-[31px] top-1 w-4 h-4 rounded-full bg-bark-brown ring-4 ring-sage-wash flex items-center justify-center"></div>
+<div class="flex items-center justify-between mb-1.5">
+<span class="font-label-md text-label-md text-forest-deep font-semibold">Aug 02, 2024, 09:15 AM</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px] text-outline" data-icon="desk">desk</span>
+                      Sarah Jenkins
+                    </span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-2">
+                    Patient Created via Reception Desk by Sarah Jenkins. Initial intake files assigned to BNC-1042.
+                  </p>
+<div class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-surface-container text-on-surface font-label-sm text-label-sm border border-sage-wash">
+<span class="material-symbols-outlined text-[16px] text-secondary" data-icon="check">check</span>
+                    Initial Record Initialized
+                  </div>
+</div>
+</div>
+<!-- Compliance Footer Badge inside Audit Card -->
+<div class="mt-8 pt-4 border-t border-sage-wash/40 flex items-center justify-between text-outline font-label-sm text-label-sm">
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px] text-bark-brown" data-icon="lock">lock</span>
+                  Tamper-Evident System Log
+                </span>
+<span>SHA-256 Validated</span>
+</div>
+</div>
+</div>
+<!-- Quick Reference Patient Summary Card -->
+<div class="bg-surface-container-low rounded-xl border border-sage-wash/60 p-5 space-y-4">
+<h4 class="font-label-md text-label-md text-forest-deep flex items-center gap-2">
+<span class="material-symbols-outlined text-bark-brown text-[18px]" data-icon="info">info</span>
+              Current Ayurvedic Care Summary
+            </h4>
+<div class="grid grid-cols-2 gap-3 text-sm">
+<div class="bg-surface-container-lowest p-3 rounded-lg border border-sage-wash/40">
+<span class="font-label-sm text-label-sm text-outline block">Dosha State</span>
+<span class="font-label-md text-label-md text-forest-deep">Pitta Aggravated</span>
+</div>
+<div class="bg-surface-container-lowest p-3 rounded-lg border border-sage-wash/40">
+<span class="font-label-sm text-label-sm text-outline block">Primary Protocol</span>
+<span class="font-label-md text-label-md text-forest-deep">Abhyanga &amp; Virechana</span>
+</div>
+<div class="bg-surface-container-lowest p-3 rounded-lg border border-sage-wash/40">
+<span class="font-label-sm text-label-sm text-outline block">Active Duration</span>
+<span class="font-label-md text-label-md text-forest-deep">Day 12 of 21</span>
+</div>
+<div class="bg-surface-container-lowest p-3 rounded-lg border border-sage-wash/40">
+<span class="font-label-sm text-label-sm text-outline block">Treating Doctor</span>
+<span class="font-label-md text-label-md text-forest-deep">Dr. Sarah Jenkins</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+</div>
+</body></html>

@@ -1,0 +1,267 @@
+<!DOCTYPE html><html class="light" lang="en" style=""><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Bethany Nature Care - Login</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com" rel="preconnect">
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+  tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        "colors": {
+                "on-primary-fixed-variant": "#274e3d",
+                "on-primary-fixed": "#002114",
+                "on-secondary-fixed": "#002113",
+                "surface-container": "#edeeea",
+                "on-error-container": "#93000a",
+                "surface-variant": "#e2e3df",
+                "on-background": "#1a1c1a",
+                "secondary-fixed-dim": "#94d4b1",
+                "tertiary": "#3f1d00",
+                "on-tertiary": "#ffffff",
+                "sage-wash": "#D8E2DC",
+                "secondary-fixed": "#b0f1cc",
+                "tertiary-container": "#5f2f00",
+                "on-surface": "#1a1c1a",
+                "on-secondary-fixed-variant": "#0c5136",
+                "primary": "#012d1d",
+                "surface-container-highest": "#e2e3df",
+                "primary-fixed": "#c1ecd4",
+                "on-error": "#ffffff",
+                "outline-variant": "#c1c8c2",
+                "secondary-container": "#b0f1cc",
+                "bark-brown": "#606C38",
+                "tertiary-fixed": "#ffdcc4",
+                "on-tertiary-fixed-variant": "#6f3800",
+                "forest-deep": "#081C15",
+                "on-secondary-container": "#327053",
+                "surface-bright": "#f9faf6",
+                "on-tertiary-fixed": "#2f1400",
+                "on-secondary": "#ffffff",
+                "surface-container-lowest": "#ffffff",
+                "inverse-surface": "#2e312f",
+                "surface-tint": "#3f6653",
+                "surface-container-high": "#e7e9e5",
+                "surface-container-low": "#f3f4f0",
+                "sun-warmth": "#FEFAE0",
+                "on-primary-container": "#86af99",
+                "inverse-primary": "#a5d0b9",
+                "primary-container": "#1b4332",
+                "error-container": "#ffdad6",
+                "secondary": "#2b694d",
+                "background": "#f9faf6",
+                "surface-dim": "#d9dad7",
+                "surface": "#f9faf6",
+                "on-tertiary-container": "#ea9147",
+                "outline": "#717973",
+                "tertiary-fixed-dim": "#ffb781",
+                "primary-fixed-dim": "#a5d0b9",
+                "inverse-on-surface": "#f0f1ed",
+                "on-primary": "#ffffff",
+                "on-surface-variant": "#414844",
+                "error": "#ba1a1a"
+        },
+        "borderRadius": {
+                "DEFAULT": "0.25rem",
+                "lg": "0.5rem",
+                "xl": "0.75rem",
+                "full": "9999px"
+        },
+        "spacing": {
+                "base-unit": "8px",
+                "margin-desktop": "32px",
+                "container-max": "1280px",
+                "margin-mobile": "16px",
+                "gutter": "24px"
+        },
+        "fontFamily": {
+                "headline-lg-mobile": [
+                        "Inter"
+                ],
+                "body-md": [
+                        "Inter"
+                ],
+                "label-sm": [
+                        "Inter"
+                ],
+                "headline-sm": [
+                        "Inter"
+                ],
+                "label-md": [
+                        "Inter"
+                ],
+                "body-sm": [
+                        "Inter"
+                ],
+                "headline-md": [
+                        "Inter"
+                ],
+                "body-lg": [
+                        "Inter"
+                ],
+                "headline-lg": [
+                        "Inter"
+                ]
+        },
+        "fontSize": {
+                "headline-lg-mobile": [
+                        "24px",
+                        {
+                                "lineHeight": "32px",
+                                "fontWeight": "700"
+                        }
+                ],
+                "body-md": [
+                        "16px",
+                        {
+                                "lineHeight": "24px",
+                                "fontWeight": "400"
+                        }
+                ],
+                "label-sm": [
+                        "12px",
+                        {
+                                "lineHeight": "16px",
+                                "fontWeight": "500"
+                        }
+                ],
+                "headline-sm": [
+                        "20px",
+                        {
+                                "lineHeight": "28px",
+                                "fontWeight": "600"
+                        }
+                ],
+                "label-md": [
+                        "14px",
+                        {
+                                "lineHeight": "20px",
+                                "letterSpacing": "0.01em",
+                                "fontWeight": "600"
+                        }
+                ],
+                "body-sm": [
+                        "14px",
+                        {
+                                "lineHeight": "20px",
+                                "fontWeight": "400"
+                        }
+                ],
+                "headline-md": [
+                        "24px",
+                        {
+                                "lineHeight": "32px",
+                                "fontWeight": "600"
+                        }
+                ],
+                "body-lg": [
+                        "18px",
+                        {
+                                "lineHeight": "28px",
+                                "fontWeight": "400"
+                        }
+                ],
+                "headline-lg": [
+                        "32px",
+                        {
+                                "lineHeight": "40px",
+                                "letterSpacing": "-0.02em",
+                                "fontWeight": "700"
+                        }
+                ]
+        }
+},
+    },
+  }
+</script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background min-h-screen flex items-center justify-center p-margin-mobile md:p-margin-desktop font-body-md">
+<!-- Container -->
+<div class="max-w-[1000px] w-full mx-auto bg-surface rounded-xl overflow-hidden shadow-[0px_4px_12px_rgba(15,23,42,0.08)] border border-outline-variant flex flex-col md:flex-row h-[700px]">
+<!-- Image Section (Hidden on Mobile) -->
+<div class="hidden md:block md:w-1/2 relative bg-surface-container-highest">
+<div class="absolute inset-0 bg-cover bg-center" data-alt="A serene, high-quality photograph of an ayurvedic wellness center interior or garden. Lush greenery, natural light, wooden accents, and a calming atmosphere reflecting natural treatments." style="background-image: url(&quot;https://lh3.googleusercontent.com/aida-public/AB6AXuB2S8LedndHF8C-Pyw31GA7BO-LG9z_2zEpO6sqOBebvlfuHaoS7Lt1K6Mmpq8X84uzXGXfOnT4eo2d8-bJ7-KZlEgLfT5tsN0QGPZ4hp2WOeUJRQI-MErHaGIV-8raT7oAVdJg_sU3cDSeS-oOK1opO12qgDb9Y-v5k-5lCrDVT47hmkOR0geoiVHEcKaqv590km6TyGqr3okHjh8fp0b3-tX9YjlltjELPlLeQZZX3u34DtZS_E24&quot;);"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-primary-container/80 to-transparent flex flex-col justify-end p-margin-desktop text-on-primary">
+<h2 class="font-headline-lg text-headline-lg mb-2 text-on-primary">Natural Healing.<br>Holistic Care.</h2>
+<p class="font-body-lg text-body-lg text-on-primary/80">Streamlined data management for holistic wellness environments.</p>
+</div>
+</div>
+<!-- Login Form Section -->
+<div class="w-full md:w-1/2 p-margin-desktop flex flex-col justify-center bg-surface h-full">
+<!-- Logo -->
+<div class="mb-8 flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-[32px]" style="font-variation-settings: 'FILL' 1;">eco</span>
+<span class="font-headline-md text-headline-md font-extrabold text-on-surface">Bethany Nature Care</span>
+</div>
+<div class="mb-8">
+<h1 class="font-headline-sm text-headline-sm text-on-surface mb-2">Welcome Back</h1>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Please log in to access the wellness management system.</p>
+</div>
+<form class="space-y-4 flex-1">
+<!-- Role Selection -->
+<div>
+<label class="block font-label-md text-label-md text-on-surface mb-2">Select Role</label>
+<div class="grid grid-cols-3 gap-2">
+<label class="cursor-pointer">
+<input checked="" class="peer sr-only" name="role" type="radio" value="admin">
+<div class="text-center py-2 px-3 border border-outline-variant rounded-DEFAULT font-label-sm text-label-sm text-on-surface-variant peer-checked:border-secondary peer-checked:bg-secondary-fixed peer-checked:text-on-secondary-fixed transition-colors">
+                                Admin
+                            </div>
+</label>
+<label class="cursor-pointer">
+<input class="peer sr-only" name="role" type="radio" value="doctor">
+<div class="text-center py-2 px-3 border border-outline-variant rounded-DEFAULT font-label-sm text-label-sm text-on-surface-variant peer-checked:border-secondary peer-checked:bg-secondary-fixed peer-checked:text-on-secondary-fixed transition-colors">Receptionist</div>
+</label>
+<label class="cursor-pointer">
+<input class="peer sr-only" name="role" type="radio" value="receptionist">
+<div class="text-center py-2 px-3 border border-outline-variant rounded-DEFAULT font-label-sm text-label-sm text-on-surface-variant peer-checked:border-secondary peer-checked:bg-secondary-fixed peer-checked:text-on-secondary-fixed transition-colors">Doctor</div>
+</label>
+</div>
+</div>
+<!-- Email / Username -->
+<div>
+<label class="block font-label-md text-label-md text-on-surface mb-2" for="username">Email or Username</label>
+<div class="relative">
+<span class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-outline">
+<span class="material-symbols-outlined text-[20px]">person</span>
+</span>
+<input class="block w-full pl-10 pr-3 py-2 border border-outline-variant rounded-DEFAULT bg-surface text-on-surface focus:outline-none focus:border-secondary focus:ring-1 focus:ring-secondary font-body-sm text-body-sm transition-colors" id="username" placeholder="Enter your credentials" type="text">
+</div>
+</div>
+<!-- Password -->
+<div>
+<label class="block font-label-md text-label-md text-on-surface mb-2" for="password">Password</label>
+<div class="relative">
+<span class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-outline">
+<span class="material-symbols-outlined text-[20px]">lock</span>
+</span>
+<input class="block w-full pl-10 pr-3 py-2 border border-outline-variant rounded-DEFAULT bg-surface text-on-surface focus:outline-none focus:border-secondary focus:ring-1 focus:ring-secondary font-body-sm text-body-sm transition-colors" id="password" placeholder="••••••••" type="password">
+</div>
+</div>
+<!-- Forgot Password & Submit -->
+<div class="flex items-center justify-between mt-2 mb-8">
+
+<div class="font-body-sm text-body-sm">
+<a class="font-label-md text-label-md text-secondary hover:text-on-secondary-fixed-variant transition-colors" href="#">Forgot Password?</a>
+</div>
+</div>
+<button class="w-full flex justify-center py-3 px-4 border border-transparent rounded-DEFAULT shadow-sm font-label-md text-label-md text-on-secondary bg-secondary hover:bg-on-secondary-fixed-variant focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-secondary transition-colors" type="submit">Login</button>
+</form>
+<div class="mt-8 text-center font-label-sm text-label-sm text-outline">
+                © 2024 Bethany Nature Care Management System. Restricted Access.
+            </div>
+</div>
+</div>
+
+
+</body></html>

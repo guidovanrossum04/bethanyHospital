@@ -1,0 +1,318 @@
+<!DOCTYPE html><html class="light" lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Bethany Nature Care Dashboard</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+  tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        "colors": {
+          "sage-wash": "#D8E2DC",
+          "outline-variant": "#c1c8c2",
+          "on-tertiary-container": "#ea9147",
+          "on-surface": "#1a1c1a",
+          "tertiary-fixed": "#ffdcc4",
+          "secondary-container": "#b0f1cc",
+          "bark-brown": "#606C38",
+          "primary-fixed": "#c1ecd4",
+          "on-secondary": "#ffffff",
+          "primary-fixed-dim": "#a5d0b9",
+          "surface-container-low": "#f3f4f0",
+          "on-tertiary": "#ffffff",
+          "surface-container-lowest": "#ffffff",
+          "on-tertiary-fixed": "#2f1400",
+          "on-secondary-fixed-variant": "#0c5136",
+          "tertiary-container": "#5f2f00",
+          "on-secondary-fixed": "#002113",
+          "error": "#ba1a1a",
+          "inverse-primary": "#a5d0b9",
+          "sun-warmth": "#FEFAE0",
+          "background": "#f9faf6",
+          "on-secondary-container": "#327053",
+          "on-error-container": "#93000a",
+          "surface-dim": "#d9dad7",
+          "primary-container": "#1b4332",
+          "tertiary": "#3f1d00",
+          "outline": "#717973",
+          "forest-deep": "#081C15",
+          "error-container": "#ffdad6",
+          "on-tertiary-fixed-variant": "#6f3800",
+          "primary": "#012d1d",
+          "secondary-fixed-dim": "#94d4b1",
+          "on-primary-fixed-variant": "#274e3d",
+          "tertiary-fixed-dim": "#ffb781",
+          "on-surface-variant": "#414844",
+          "on-primary-container": "#86af99",
+          "on-background": "#1a1c1a",
+          "surface-variant": "#e2e3df",
+          "surface-container-high": "#e7e9e5",
+          "on-primary-fixed": "#002114",
+          "surface-tint": "#3f6653",
+          "surface-container-highest": "#e2e3df",
+          "inverse-on-surface": "#f0f1ed",
+          "on-error": "#ffffff",
+          "on-primary": "#ffffff",
+          "surface": "#f9faf6",
+          "inverse-surface": "#2e312f",
+          "secondary": "#2b694d",
+          "surface-bright": "#f9faf6",
+          "secondary-fixed": "#b0f1cc",
+          "surface-container": "#edeeea"
+        },
+        "borderRadius": {
+          "DEFAULT": "0.25rem",
+          "lg": "0.5rem",
+          "xl": "0.75rem",
+          "full": "9999px"
+        },
+        "spacing": {
+          "margin-desktop": "32px",
+          "container-max": "1280px",
+          "gutter": "24px",
+          "margin-mobile": "16px",
+          "base-unit": "8px"
+        },
+        "fontFamily": {
+          "body": ["Inter", "sans-serif"]
+        }
+      },
+    },
+  }
+</script>
+<style>
+  body { font-family: 'Inter', sans-serif; }
+  .material-symbols-outlined {
+    font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+  }
+  .material-symbols-fill {
+    font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+  }
+</style>
+</head>
+<body class="bg-[#f9faf6] text-on-background antialiased flex h-screen overflow-hidden">
+<!-- SideNavBar -->
+<nav class="bg-surface-container-lowest text-secondary flex flex-col h-screen py-8 px-4 border-r border-[#e5e7eb] docked left-0 h-full w-64 z-20 flex-shrink-0 hidden md:flex">
+<!-- Brand Header -->
+<div class="mb-8 px-3">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-lg bg-primary-container flex items-center justify-center text-white shadow-sm">
+<span class="material-symbols-outlined material-symbols-fill text-2xl">local_hospital</span>
+</div>
+<div>
+<h1 class="font-bold text-base text-[#111827] leading-tight tracking-tight">Bethany<br>Nature Care</h1>
+<p class="text-xs text-on-surface-variant font-normal mt-0.5">Clinical Management</p>
+</div>
+</div>
+</div>
+<!-- Navigation Menu -->
+<ul class="flex-1 space-y-1.5 overflow-y-auto pr-1">
+<li>
+<a class="flex items-center gap-3.5 px-3.5 py-2.5 rounded-lg text-secondary font-semibold bg-[#e8eee9] border-r-4 border-secondary cursor-pointer transition-colors" href="#">
+<span class="material-symbols-outlined material-symbols-fill text-xl">dashboard</span>
+<span class="text-sm">Dashboard</span>
+</a>
+</li>
+<li>
+<a class="flex items-center gap-3.5 px-3.5 py-2.5 rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-[#f0f3f0] transition-colors cursor-pointer" href="#">
+<span class="material-symbols-outlined text-xl">person_add</span>
+<span class="text-sm font-medium">Patients</span>
+</a>
+</li>
+<li>
+<a class="flex items-center gap-3.5 px-3.5 py-2.5 rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-[#f0f3f0] transition-colors cursor-pointer" href="#">
+<span class="material-symbols-outlined text-xl">inventory_2</span>
+<span class="text-sm font-medium">Inventory</span>
+</a>
+</li>
+<li>
+<a class="flex items-center gap-3.5 px-3.5 py-2.5 rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-[#f0f3f0] transition-colors cursor-pointer" href="#">
+<span class="material-symbols-outlined text-xl">meeting_room</span>
+<span class="text-sm font-medium">Facilities</span>
+</a>
+</li>
+<li>
+<a class="flex items-center gap-3.5 px-3.5 py-2.5 rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-[#f0f3f0] transition-colors cursor-pointer" href="#">
+<span class="material-symbols-outlined text-xl">assessment</span>
+<span class="text-sm font-medium">Reports</span>
+</a>
+</li>
+</ul>
+<!-- Bottom Navigation Items -->
+<div class="mt-auto pt-6 border-t border-[#e5e7eb]">
+<ul class="space-y-1">
+<li>
+<a class="flex items-center gap-3.5 px-3.5 py-2 rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-[#f0f3f0] transition-colors cursor-pointer" href="#">
+<span class="material-symbols-outlined text-xl">settings</span>
+<span class="text-sm font-medium">Settings</span>
+</a>
+</li>
+<li>
+<a class="flex items-center gap-3.5 px-3.5 py-2 rounded-lg text-error hover:bg-error-container hover:text-on-error-container transition-colors cursor-pointer" href="#">
+<span class="material-symbols-outlined text-xl">logout</span>
+<span class="text-sm font-medium">Logout</span>
+</a>
+</li>
+</ul>
+</div>
+</nav>
+<!-- Main Content Area -->
+<div class="flex-1 flex flex-col min-w-0 bg-[#f9faf6]">
+<!-- TopAppBar -->
+<header class="bg-[#f9faf6] flex justify-between items-center h-16 px-6 md:px-8 w-full border-b border-[#e5e7eb] z-10 flex-shrink-0">
+<div class="flex items-center md:hidden">
+<h1 class="text-base font-bold text-on-surface">Bethany Nature Care</h1>
+</div>
+<!-- Search bar & User controls -->
+<div class="flex items-center gap-5 ml-auto">
+<div class="relative hidden md:block">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 text-lg">search</span>
+<input class="pl-9 pr-4 py-1.5 border border-[#d1d5db] rounded-full text-sm bg-surface-container-lowest focus:outline-none focus:border-secondary focus:ring-1 focus:ring-secondary w-64 placeholder-gray-400 transition-all shadow-sm" placeholder="Search patients, records..." type="text">
+</div>
+<div class="flex items-center gap-2">
+<button class="p-1.5 rounded-full text-gray-500 hover:bg-[#eaede8] transition-colors" title="Notifications">
+<span class="material-symbols-outlined text-xl">notifications</span>
+</button>
+<button class="p-1.5 rounded-full text-gray-500 hover:bg-[#eaede8] transition-colors hidden sm:block" title="Help">
+<span class="material-symbols-outlined text-xl">help_outline</span>
+</button>
+</div>
+<div class="h-6 w-px bg-[#e5e7eb] mx-1 hidden sm:block"></div>
+<div class="flex items-center gap-3">
+<div class="text-right hidden lg:block">
+<p class="text-[11px] text-gray-500 uppercase tracking-wider font-semibold">Role: Receptionist</p>
+<p class="text-sm font-semibold text-gray-900 leading-tight">Sarah Jenkins</p>
+</div>
+<img alt="User Profile Avatar" class="w-9 h-9 rounded-full border border-outline-variant object-cover ring-1 ring-black/5 shadow-xs" data-alt="A professional headshot of a female doctor in her 40s wearing a white clinical coat over a blue scrub top. She has a warm, confident smile, neat shoulder-length dark hair, and glasses. The background is a slightly blurred, bright, modern hospital corridor with soft, cool daylight illuminating her face evenly. The image conveys trust, competence, and a clean clinical environment." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAoSJvegP6hOgBzhMWwFKj_YYq1b-gu6_fYvt8gTnNPAssLWnO9MXHus5n2lySOrarhZ6Ht3RAZuEihQM8qxswv9raxMpAJZPQb4CdWjps61iNN85o8hI_gbhTN-ZpZwUj5sqLvpg6YTKJFeYBzEtIazUWVbhCFk5MRPeQkAvHEvNcyNUtSEOLKZSWTilC9aWyWuIbSdu7xPaQL68gan39OXkhju_sU_GwxYXXhgUkkbj0oAZBWGWqN">
+</div>
+</div>
+</header>
+<!-- Dashboard Canvas -->
+<main class="flex-1 overflow-y-auto p-6 md:p-8 bg-[#f9faf6]">
+<div class="max-w-container-max mx-auto space-y-6">
+<!-- Overview Section Title and Date -->
+<div class="flex justify-between items-end">
+<div>
+<h2 class="text-2xl md:text-[28px] font-bold text-gray-900 tracking-tight">Overview</h2>
+<p class="text-sm text-gray-500 mt-0.5">Today's operational snapshot.</p>
+</div>
+<p class="text-sm font-semibold text-secondary">Tuesday, Oct 24</p>
+</div>
+<!-- Primary Modules Bento Grid -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<!-- Patient Registration Card -->
+<div class="bg-surface-container-lowest border border-[#e5e7eb] rounded-xl p-6 hover:shadow-md transition-shadow cursor-pointer group flex flex-col justify-between h-full">
+<div>
+<div class="flex justify-between items-start mb-5">
+<div class="w-11 h-11 rounded-xl bg-secondary-fixed text-on-secondary-fixed flex items-center justify-center group-hover:bg-primary-container group-hover:text-white transition-colors">
+<span class="material-symbols-outlined text-2xl">person_add</span>
+</div>
+<span class="bg-[#ffdcc4] text-[#6f3800] text-xs font-semibold px-2.5 py-1 rounded-full">+12 Today</span>
+</div>
+<h3 class="text-lg font-bold text-gray-900 mb-2">Patient Registration</h3>
+<p class="text-sm text-gray-600 leading-relaxed mb-6">Intake new patients, manage admissions, and update critical personal health information.</p>
+</div>
+<div class="flex items-center text-secondary font-semibold text-sm group-hover:translate-x-1 transition-transform">
+            Open Module <span class="material-symbols-outlined ml-1 text-base">arrow_forward</span>
+</div>
+</div>
+<!-- Store Management Card -->
+<div class="bg-surface-container-lowest border border-[#e5e7eb] rounded-xl p-6 hover:shadow-md transition-shadow cursor-pointer group flex flex-col justify-between h-full">
+<div>
+<div class="flex justify-between items-start mb-5">
+<div class="w-11 h-11 rounded-xl bg-secondary-fixed text-on-secondary-fixed flex items-center justify-center group-hover:bg-primary-container group-hover:text-white transition-colors">
+<span class="material-symbols-outlined text-2xl">inventory_2</span>
+</div>
+<span class="bg-[#ffdcc4] text-[#6f3800] text-xs font-semibold px-2.5 py-1 rounded-full">Product Name Refill</span>
+</div>
+<h3 class="text-lg font-bold text-gray-900 mb-2">Store Management</h3>
+<p class="text-sm text-gray-600 leading-relaxed mb-6">Track pharmaceutical inventory, surgical supplies, and manage vendor restocking orders.</p>
+</div>
+<div class="flex items-center text-secondary font-semibold text-sm group-hover:translate-x-1 transition-transform">
+            Open Module <span class="material-symbols-outlined ml-1 text-base">arrow_forward</span>
+</div>
+</div>
+<!-- Facility Management Card -->
+<div class="bg-surface-container-lowest border border-[#e5e7eb] rounded-xl p-6 hover:shadow-md transition-shadow cursor-pointer group flex flex-col justify-between h-full">
+<div>
+<div class="flex justify-between items-start mb-5">
+<div class="w-11 h-11 rounded-xl bg-secondary-fixed text-on-secondary-fixed flex items-center justify-center group-hover:bg-primary-container group-hover:text-white transition-colors">
+<span class="material-symbols-outlined text-2xl">meeting_room</span>
+</div>
+<span class="bg-[#e2e3df] text-[#414844] text-xs font-semibold px-2.5 py-1 rounded-full">85% Occupancy</span>
+</div>
+<h3 class="text-lg font-bold text-gray-900 mb-2">Facility Management</h3>
+<p class="text-sm text-gray-600 leading-relaxed mb-6">Monitor the room availability.</p>
+</div>
+<div class="flex items-center text-secondary font-semibold text-sm group-hover:translate-x-1 transition-transform">
+            Open Module <span class="material-symbols-outlined ml-1 text-base">arrow_forward</span>
+</div>
+</div>
+</div>
+<!-- Today's Appointments Table Section -->
+<div class="bg-surface-container-lowest border border-[#e5e7eb] rounded-xl overflow-hidden shadow-xs">
+<div class="px-6 py-4 border-b border-[#e5e7eb] flex justify-between items-center bg-[#fafbfa]">
+<h3 class="text-base font-bold text-gray-900">Today's Appointments</h3>
+<button class="text-sm font-semibold text-secondary hover:text-on-secondary-fixed-variant transition-colors flex items-center gap-0.5">
+            View All Schedule <span class="material-symbols-outlined text-base">chevron_right</span>
+</button>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="border-b border-[#e5e7eb] bg-[#f9faf6] text-xs font-semibold uppercase text-gray-500 tracking-wider">
+<th class="py-3 px-6">Patient Name</th>
+<th class="py-3 px-6">Time</th>
+<th class="py-3 px-6">Department</th>
+<th class="py-3 px-6">Physician</th>
+<th class="py-3 px-6">Status</th>
+</tr>
+</thead>
+<tbody class="text-sm text-gray-800 divide-y divide-[#e5e7eb]">
+<tr class="hover:bg-[#f5f7f4] transition-colors">
+<td class="py-4 px-6 font-semibold text-gray-900">Robert Chen</td>
+<td class="py-4 px-6 text-gray-500">09:00 AM</td>
+<td class="py-4 px-6">Cardiology</td>
+<td class="py-4 px-6">Dr. M. Rivera</td>
+<td class="py-4 px-6">
+<span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-semibold bg-[#ffdcc4] text-[#6f3800]">Checked In</span>
+</td>
+</tr>
+<tr class="hover:bg-[#f5f7f4] transition-colors">
+<td class="py-4 px-6 font-semibold text-gray-900">Elena Rostova</td>
+<td class="py-4 px-6 text-gray-500">09:30 AM</td>
+<td class="py-4 px-6">Neurology</td>
+<td class="py-4 px-6">Dr. S. Jenkins</td>
+<td class="py-4 px-6">
+<span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-semibold bg-[#e2e3df] text-[#414844]">Waiting</span>
+</td>
+</tr>
+<tr class="hover:bg-[#f5f7f4] transition-colors">
+<td class="py-4 px-6 font-semibold text-gray-900">James O'Connor</td>
+<td class="py-4 px-6 text-gray-500">10:15 AM</td>
+<td class="py-4 px-6">Orthopedics</td>
+<td class="py-4 px-6">Dr. L. Chen</td>
+<td class="py-4 px-6">
+<span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-semibold bg-[#b0f1cc] text-[#0c5136]">Confirmed</span>
+</td>
+</tr>
+<tr class="hover:bg-[#f5f7f4] transition-colors">
+<td class="py-4 px-6 font-semibold text-gray-900">Aisha Patel</td>
+<td class="py-4 px-6 text-gray-500">11:00 AM</td>
+<td class="py-4 px-6">Pediatrics</td>
+<td class="py-4 px-6">Dr. J. Smith</td>
+<td class="py-4 px-6">
+<span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-semibold bg-[#ffdad6] text-[#93000a]">Delayed</span>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</main>
+</div>
+</body></html>

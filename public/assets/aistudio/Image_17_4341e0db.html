@@ -1,0 +1,441 @@
+<!DOCTYPE html><html class="light" lang="en" style=""><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Bethany Nature Care - New Patient Registration</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+  tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        "colors": {
+                "on-primary-fixed-variant": "#274e3d",
+                "on-primary-fixed": "#002114",
+                "on-secondary-fixed": "#002113",
+                "surface-container": "#edeeea",
+                "on-error-container": "#93000a",
+                "surface-variant": "#e2e3df",
+                "on-background": "#1a1c1a",
+                "secondary-fixed-dim": "#94d4b1",
+                "tertiary": "#3f1d00",
+                "on-tertiary": "#ffffff",
+                "sage-wash": "#D8E2DC",
+                "secondary-fixed": "#b0f1cc",
+                "tertiary-container": "#5f2f00",
+                "on-surface": "#1a1c1a",
+                "on-secondary-fixed-variant": "#0c5136",
+                "primary": "#012d1d",
+                "surface-container-highest": "#e2e3df",
+                "primary-fixed": "#c1ecd4",
+                "on-error": "#ffffff",
+                "outline-variant": "#c1c8c2",
+                "secondary-container": "#b0f1cc",
+                "bark-brown": "#606C38",
+                "tertiary-fixed": "#ffdcc4",
+                "on-tertiary-fixed-variant": "#6f3800",
+                "forest-deep": "#081C15",
+                "on-secondary-container": "#327053",
+                "surface-bright": "#f9faf6",
+                "on-tertiary-fixed": "#2f1400",
+                "on-secondary": "#ffffff",
+                "surface-container-lowest": "#ffffff",
+                "inverse-surface": "#2e312f",
+                "surface-tint": "#3f6653",
+                "surface-container-high": "#e7e9e5",
+                "surface-container-low": "#f3f4f0",
+                "sun-warmth": "#FEFAE0",
+                "on-primary-container": "#86af99",
+                "inverse-primary": "#a5d0b9",
+                "primary-container": "#1b4332",
+                "error-container": "#ffdad6",
+                "secondary": "#2b694d",
+                "background": "#f9faf6",
+                "surface-dim": "#d9dad7",
+                "surface": "#f9faf6",
+                "on-tertiary-container": "#ea9147",
+                "outline": "#717973",
+                "tertiary-fixed-dim": "#ffb781",
+                "primary-fixed-dim": "#a5d0b9",
+                "inverse-on-surface": "#f0f1ed",
+                "on-primary": "#ffffff",
+                "on-surface-variant": "#414844",
+                "error": "#ba1a1a"
+        },
+        "borderRadius": {
+                "DEFAULT": "0.25rem",
+                "lg": "0.5rem",
+                "xl": "0.75rem",
+                "full": "9999px"
+        },
+        "spacing": {
+                "base-unit": "8px",
+                "margin-desktop": "32px",
+                "container-max": "1280px",
+                "margin-mobile": "16px",
+                "gutter": "24px"
+        },
+        "fontFamily": {
+                "headline-lg-mobile": [
+                        "Inter"
+                ],
+                "body-md": [
+                        "Inter"
+                ],
+                "label-sm": [
+                        "Inter"
+                ],
+                "headline-sm": [
+                        "Inter"
+                ],
+                "label-md": [
+                        "Inter"
+                ],
+                "body-sm": [
+                        "Inter"
+                ],
+                "headline-md": [
+                        "Inter"
+                ],
+                "body-lg": [
+                        "Inter"
+                ],
+                "headline-lg": [
+                        "Inter"
+                ]
+        },
+        "fontSize": {
+                "headline-lg-mobile": [
+                        "24px",
+                        {
+                                "lineHeight": "32px",
+                                "fontWeight": "700"
+                        }
+                ],
+                "body-md": [
+                        "16px",
+                        {
+                                "lineHeight": "24px",
+                                "fontWeight": "400"
+                        }
+                ],
+                "label-sm": [
+                        "12px",
+                        {
+                                "lineHeight": "16px",
+                                "fontWeight": "500"
+                        }
+                ],
+                "headline-sm": [
+                        "20px",
+                        {
+                                "lineHeight": "28px",
+                                "fontWeight": "600"
+                        }
+                ],
+                "label-md": [
+                        "14px",
+                        {
+                                "lineHeight": "20px",
+                                "letterSpacing": "0.01em",
+                                "fontWeight": "600"
+                        }
+                ],
+                "body-sm": [
+                        "14px",
+                        {
+                                "lineHeight": "20px",
+                                "fontWeight": "400"
+                        }
+                ],
+                "headline-md": [
+                        "24px",
+                        {
+                                "lineHeight": "32px",
+                                "fontWeight": "600"
+                        }
+                ],
+                "body-lg": [
+                        "18px",
+                        {
+                                "lineHeight": "28px",
+                                "fontWeight": "400"
+                        }
+                ],
+                "headline-lg": [
+                        "32px",
+                        {
+                                "lineHeight": "40px",
+                                "letterSpacing": "-0.02em",
+                                "fontWeight": "700"
+                        }
+                ]
+        }
+},
+    },
+  }
+</script>
+</head>
+<body class="bg-background text-on-surface font-body-md h-screen overflow-hidden flex">
+<!-- SideNavBar -->
+<nav class="bg-surface-container-lowest text-secondary flex flex-col h-screen py-8 px-4 border-r border-[#e5e7eb] docked left-0 h-full w-64 z-20 flex-shrink-0 fixed hidden md:flex">
+<!-- Brand Header -->
+<div class="mb-8 px-3">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-lg bg-primary-container flex items-center justify-center text-white shadow-sm">
+<span class="material-symbols-outlined material-symbols-fill text-2xl">local_hospital</span>
+</div>
+<div>
+<h1 class="font-bold text-base text-[#111827] leading-tight tracking-tight">Bethany<br>Nature Care</h1>
+<p class="text-xs text-on-surface-variant font-normal mt-0.5">Clinical Management</p>
+</div>
+</div>
+</div>
+<!-- Navigation Menu -->
+<ul class="flex-1 space-y-1.5 overflow-y-auto pr-1">
+<li class="">
+<a class="flex items-center gap-3.5 px-3.5 py-2.5 rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-[#f0f3f0] transition-colors cursor-pointer" href="#">
+<span class="material-symbols-outlined text-xl">dashboard</span>
+<span class="text-sm font-medium">Dashboard</span>
+</a>
+</li>
+<li class="">
+<a class="flex items-center gap-3.5 px-3.5 py-2.5 rounded-lg text-secondary font-semibold bg-[#e8eee9] border-r-4 border-secondary cursor-pointer transition-colors" href="#">
+<span class="material-symbols-outlined text-xl" style="font-variation-settings: 'FILL' 1;">person_add</span>
+<span class="text-sm font-semibold">Patients</span>
+</a>
+</li>
+<li class="">
+<a class="flex items-center gap-3.5 px-3.5 py-2.5 rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-[#f0f3f0] transition-colors cursor-pointer" href="#">
+<span class="material-symbols-outlined text-xl">inventory_2</span>
+<span class="text-sm font-medium">Inventory</span>
+</a>
+</li>
+<li class="">
+<a class="flex items-center gap-3.5 px-3.5 py-2.5 rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-[#f0f3f0] transition-colors cursor-pointer" href="#">
+<span class="material-symbols-outlined text-xl">meeting_room</span>
+<span class="text-sm font-medium">Facilities</span>
+</a>
+</li>
+<li class="">
+<a class="flex items-center gap-3.5 px-3.5 py-2.5 rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-[#f0f3f0] transition-colors cursor-pointer" href="#">
+<span class="material-symbols-outlined text-xl">assessment</span>
+<span class="text-sm font-medium">Reports</span>
+</a>
+</li>
+</ul>
+<!-- Bottom Navigation Items -->
+<div class="mt-auto pt-6 border-t border-[#e5e7eb]">
+<ul class="space-y-1">
+<li class="">
+<a class="flex items-center gap-3.5 px-3.5 py-2 rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-[#f0f3f0] transition-colors cursor-pointer" href="#">
+<span class="material-symbols-outlined text-xl">settings</span>
+<span class="text-sm font-medium">Settings</span>
+</a>
+</li>
+<li class="">
+<a class="flex items-center gap-3.5 px-3.5 py-2 rounded-lg text-error hover:bg-error-container hover:text-on-error-container transition-colors cursor-pointer" href="#">
+<span class="material-symbols-outlined text-xl">logout</span>
+<span class="text-sm font-medium">Logout</span>
+</a>
+</li>
+</ul>
+</div>
+</nav>
+<!-- Main Content Area -->
+<div class="flex-1 flex flex-col h-screen overflow-hidden md:ml-64">
+<!-- TopAppBar -->
+<header class="bg-surface flex justify-between items-center h-16 px-margin-desktop w-full border-b border-outline-variant z-10 shrink-0"><div class="flex items-center md:hidden">
+<h1 class="text-base font-bold text-on-surface">Bethany Nature Care</h1>
+</div>
+<div class="flex items-center gap-5 ml-auto">
+
+<div class="flex items-center gap-2">
+<button class="p-1.5 rounded-full text-gray-500 hover:bg-[#eaede8] transition-colors" title="Notifications">
+<span class="material-symbols-outlined text-xl">notifications</span>
+</button>
+<button class="p-1.5 rounded-full text-gray-500 hover:bg-[#eaede8] transition-colors hidden sm:block" title="Help">
+<span class="material-symbols-outlined text-xl">help_outline</span>
+</button>
+</div>
+<div class="h-6 w-px bg-[#e5e7eb] mx-1 hidden sm:block"></div>
+<div class="flex items-center gap-3">
+<div class="text-right hidden lg:block">
+<p class="text-[11px] text-gray-500 uppercase tracking-wider font-semibold">Role: Receptionist</p>
+<p class="text-sm font-semibold text-gray-900 leading-tight">Sarah Jenkins</p>
+</div>
+<img alt="User Profile Avatar" class="w-9 h-9 rounded-full border border-outline-variant object-cover ring-1 ring-black/5 shadow-xs" data-alt="A professional headshot of a female doctor in her 40s wearing a white clinical coat over a blue scrub top. She has a warm, confident smile, neat shoulder-length dark hair, and glasses. The background is a slightly blurred, bright, modern hospital corridor with soft, cool daylight illuminating her face evenly. The image conveys trust, competence, and a clean clinical environment." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAoSJvegP6hOgBzhMWwFKj_YYq1b-gu6_fYvt8gTnNPAssLWnO9MXHus5n2lySOrarhZ6Ht3RAZuEihQM8qxswv9raxMpAJZPQb4CdWjps61iNN85o8hI_gbhTN-ZpZwUj5sqLvpg6YTKJFeYBzEtIazUWVbhCFk5MRPeQkAvHEvNcyNUtSEOLKZSWTilC9aWyWuIbSdu7xPaQL68gan39OXkhju_sU_GwxYXXhgUkkbj0oAZBWGWqN">
+</div>
+</div></header>
+<!-- Scrollable Canvas -->
+<main class="flex-1 overflow-y-auto p-8 lg:p-12">
+<div class="max-w-4xl mx-auto">
+<div class="flex justify-between items-end mb-6">
+<div>
+<h2 class="text-2xl md:text-[28px] font-bold text-gray-900 tracking-tight">New Patient Registration</h2>
+<p class="text-sm text-gray-500 mt-0.5">Enter patient details below to generate a new medical record.</p>
+</div>
+<p class="text-sm font-semibold text-secondary">Tuesday, Oct 24</p>
+</div>
+<!-- Registration Form -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded-xl p-8 mb-12 shadow-[0_4px_12px_rgba(15,23,42,0.04)]">
+<form class="space-y-12" id="registrationForm">
+<!-- Section: Personal Details -->
+<section>
+<h3 class="font-headline-sm text-headline-sm text-on-surface mb-6 border-b border-outline-variant pb-2 flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary">badge</span>
+                                Personal Details
+                            </h3>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<div class="col-span-1 md:col-span-2">
+<label class="block font-label-md text-label-md text-on-surface mb-2" for="fullName">Full Name *</label>
+<input class="w-full bg-surface border border-outline-variant rounded px-4 py-2.5 focus:border-secondary focus:ring-1 focus:ring-secondary font-body-md text-on-surface" id="fullName" placeholder="e.g. Jane Doe" required="" type="text">
+</div>
+<div>
+<label class="block font-label-md text-label-md text-on-surface mb-2" for="dob">Date of Birth *</label>
+<div class="relative">
+<input class="w-full bg-surface border border-outline-variant rounded px-4 py-2.5 focus:border-secondary focus:ring-1 focus:ring-secondary font-body-md text-on-surface" id="dob" required="" type="date">
+</div>
+</div>
+<div>
+<label class="block font-label-md text-label-md text-on-surface mb-2" for="age">Age</label>
+<input class="w-full bg-surface-container-low border border-outline-variant rounded px-4 py-2.5 text-on-surface-variant font-body-md cursor-not-allowed" id="age" placeholder="Auto-calculated" readonly="" type="text">
+</div>
+</div>
+</section>
+<!-- Section: Contact Info -->
+<section>
+<h3 class="font-headline-sm text-headline-sm text-on-surface mb-6 border-b border-outline-variant pb-2 flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary">contact_phone</span>
+                                Contact Information
+                            </h3>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<div class="col-span-1 md:col-span-2">
+<label class="block font-label-md text-label-md text-on-surface mb-2" for="address">Full Address *</label>
+<textarea class="w-full bg-surface border border-outline-variant rounded px-4 py-2.5 focus:border-secondary focus:ring-1 focus:ring-secondary font-body-md text-on-surface resize-none" id="address" placeholder="Enter complete residential address" required="" rows="3"></textarea>
+</div>
+<div>
+<label class="block font-label-md text-label-md text-on-surface mb-2" for="phone">Phone Number *</label>
+<input class="w-full bg-surface border border-outline-variant rounded px-4 py-2.5 focus:border-secondary focus:ring-1 focus:ring-secondary font-body-md text-on-surface" id="phone" placeholder="(555) 000-0000" required="" type="tel">
+</div>
+<div>
+<label class="block font-label-md text-label-md text-on-surface mb-2" for="emergencyPhone">Emergency Contact Number *</label>
+<input class="w-full bg-surface border border-outline-variant rounded px-4 py-2.5 focus:border-secondary focus:ring-1 focus:ring-secondary font-body-md text-on-surface" id="emergencyPhone" placeholder="(555) 000-0000" required="" type="tel">
+</div>
+</div>
+</section>
+<!-- Section: Medical Basics -->
+<section>
+<h3 class="font-headline-sm text-headline-sm text-on-surface mb-6 border-b border-outline-variant pb-2 flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary">vital_signs</span>
+                                Medical Basics
+                            </h3>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<div>
+<label class="block font-label-md text-label-md text-on-surface mb-2" for="bloodGroup">Blood Group *</label>
+<select class="w-full bg-surface border border-outline-variant rounded px-4 py-2.5 focus:border-secondary focus:ring-1 focus:ring-secondary font-body-md text-on-surface" id="bloodGroup" required="">
+<option disabled="" selected="" value="">Select Blood Group</option>
+<option value="A+">A+</option>
+<option value="A-">A-</option>
+<option value="B+">B+</option>
+<option value="B-">B-</option>
+<option value="AB+">AB+</option>
+<option value="AB-">AB-</option>
+<option value="O+">O+</option>
+<option value="O-">O-</option>
+</select>
+</div>
+</div>
+</section>
+<div class="flex justify-end gap-4 pt-6 border-t border-outline-variant">
+<button class="px-6 py-2.5 border border-outline rounded font-label-md text-label-md text-on-surface hover:bg-surface-container-low transition-colors" type="button">Clear Form</button>
+<button class="px-6 py-2.5 bg-secondary text-on-secondary rounded font-label-md text-label-md hover:bg-secondary-container transition-colors shadow-[0_4px_12px_rgba(15,23,42,0.08)]" type="submit">Submit Registration</button>
+</div>
+</form>
+</div>
+<!-- Registration Slip Preview (Hidden by default, shown via JS for demo) -->
+<div class="hidden bg-surface-container-lowest border border-outline-variant rounded-xl p-8 mb-12 relative overflow-hidden shadow-[0_4px_12px_rgba(15,23,42,0.04)]" id="slipPreview">
+<div class="absolute top-0 left-0 w-full h-2 bg-secondary"></div>
+<div class="flex justify-between items-start mb-8">
+<div>
+<h3 class="font-headline-md text-headline-md font-bold text-on-surface">Patient Registration Slip</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Bethany Nature Care Clinical Management</p>
+</div>
+<div class="text-right">
+<p class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider mb-1">Patient ID</p>
+<p class="font-headline-sm text-headline-sm font-bold text-secondary bg-surface-container px-3 py-1 rounded inline-block" id="displayPatientId">BNC-2023-XXXXX</p>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-y-6 gap-x-12 mb-8 bg-surface-container-low p-6 rounded border border-outline-variant">
+<div>
+<p class="font-label-sm text-label-sm text-on-surface-variant mb-1">Patient Name</p>
+<p class="font-body-md text-body-md text-on-surface font-semibold" id="displayName">-</p>
+</div>
+<div>
+<p class="font-label-sm text-label-sm text-on-surface-variant mb-1">Date of Registration</p>
+<p class="font-body-md text-body-md text-on-surface" id="displayDate">-</p>
+</div>
+<div>
+<p class="font-label-sm text-label-sm text-on-surface-variant mb-1">Age / DOB</p>
+<p class="font-body-md text-body-md text-on-surface" id="displayAgeDob">-</p>
+</div>
+<div>
+<p class="font-label-sm text-label-sm text-on-surface-variant mb-1">Blood Group</p>
+<p class="font-body-md text-body-md text-on-surface" id="displayBlood">-</p>
+</div>
+</div>
+<div class="flex justify-end gap-4 mt-8">
+<button class="px-6 py-2.5 border border-outline rounded font-label-md text-label-md text-on-surface hover:bg-surface-container-low transition-colors flex items-center gap-2" type="button">
+<span class="material-symbols-outlined text-sm">print</span>
+                            Print Slip
+                        </button>
+</div>
+</div>
+</div>
+</main>
+</div>
+<script>
+        // Simple age calculation logic
+        const dobInput = document.getElementById('dob');
+        const ageInput = document.getElementById('age');
+
+        dobInput.addEventListener('change', function() {
+            if(this.value) {
+                const dob = new Date(this.value);
+                const today = new Date();
+                let age = today.getFullYear() - dob.getFullYear();
+                const m = today.getMonth() - dob.getMonth();
+                if (m < 0 || (m === 0 && today.getDate() < dob.getDate())) {
+                    age--;
+                }
+                ageInput.value = age + ' years';
+            } else {
+                ageInput.value = '';
+            }
+        });
+
+        // Form submission simulation
+        document.getElementById('registrationForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Populate slip
+            document.getElementById('displayName').textContent = document.getElementById('fullName').value;
+            const today = new Date().toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' });
+            document.getElementById('displayDate').textContent = today;
+            document.getElementById('displayAgeDob').textContent = `${document.getElementById('age').value} / ${document.getElementById('dob').value}`;
+            document.getElementById('displayBlood').textContent = document.getElementById('bloodGroup').value;
+            
+            // Generate random ID
+            const randomNum = Math.floor(10000 + Math.random() * 90000);
+            document.getElementById('displayPatientId').textContent = `BNC-2023-${randomNum}`;
+
+            // Show slip, hide form slightly or scroll down
+            document.getElementById('slipPreview').classList.remove('hidden');
+            document.getElementById('slipPreview').scrollIntoView({ behavior: 'smooth' });
+        });
+    </script>
+
+
+</body></html>

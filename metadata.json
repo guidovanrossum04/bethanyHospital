@@ -1,0 +1,6 @@
+{
+  "name": "Bethany Nature Care - Clinical Management System",
+  "description": "Comprehensive clinical management, Ayurvedic consultation, herbal dispensary, patient records, and facility management system.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

@@ -1,0 +1,603 @@
+<!DOCTYPE html>
+
+<html class="h-full" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Bethany Nature Care - Patient Consultation &amp; Medical History</title>
+<!-- Material Symbols Outlined Font -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Inter Google Font -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS CDN -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind Theme Configuration -->
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "bark-brown": "#606C38",
+            "primary-fixed": "#c1ecd4",
+            "on-secondary-fixed": "#002113",
+            "on-primary-container": "#86af99",
+            "primary-container": "#1b4332",
+            "on-tertiary-fixed-variant": "#6f3800",
+            "tertiary-fixed-dim": "#ffb781",
+            "surface": "#f9faf6",
+            "surface-container-lowest": "#ffffff",
+            "on-tertiary-fixed": "#2f1400",
+            "on-tertiary-container": "#ea9147",
+            "on-primary": "#ffffff",
+            "secondary-fixed": "#b0f1cc",
+            "on-secondary-container": "#327053",
+            "surface-bright": "#f9faf6",
+            "tertiary-container": "#5f2f00",
+            "on-secondary": "#ffffff",
+            "on-primary-fixed-variant": "#274e3d",
+            "surface-variant": "#e2e3df",
+            "tertiary": "#3f1d00",
+            "surface-dim": "#d9dad7",
+            "on-error": "#ffffff",
+            "outline-variant": "#c1c8c2",
+            "on-primary-fixed": "#002114",
+            "sun-warmth": "#FEFAE0",
+            "secondary": "#2b694d",
+            "error-container": "#ffdad6",
+            "surface-container-low": "#f3f4f0",
+            "inverse-surface": "#2e312f",
+            "on-secondary-fixed-variant": "#0c5136",
+            "inverse-primary": "#a5d0b9",
+            "on-surface-variant": "#414844",
+            "secondary-fixed-dim": "#94d4b1",
+            "secondary-container": "#b0f1cc",
+            "on-background": "#1a1c1a",
+            "background": "#f9faf6",
+            "error": "#ba1a1a",
+            "forest-deep": "#081C15",
+            "on-error-container": "#93000a",
+            "primary": "#012d1d",
+            "surface-container-high": "#e7e9e5",
+            "surface-tint": "#3f6653",
+            "on-tertiary": "#ffffff",
+            "surface-container-highest": "#e2e3df",
+            "tertiary-fixed": "#ffdcc4",
+            "sage-wash": "#D8E2DC",
+            "inverse-on-surface": "#f0f1ed",
+            "on-surface": "#1a1c1a",
+            "surface-container": "#edeeea",
+            "outline": "#717973",
+            "primary-fixed-dim": "#a5d0b9"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "base-unit": "8px",
+            "container-max": "1280px",
+            "gutter": "24px",
+            "margin-mobile": "16px",
+            "margin-desktop": "32px"
+          },
+          "fontFamily": {
+            "label-md": ["Inter"],
+            "body-sm": ["Inter"],
+            "body-lg": ["Inter"],
+            "label-sm": ["Inter"],
+            "headline-lg-mobile": ["Inter"],
+            "headline-md": ["Inter"],
+            "headline-sm": ["Inter"],
+            "headline-lg": ["Inter"],
+            "body-md": ["Inter"]
+          },
+          "fontSize": {
+            "label-md": ["14px", { "lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "600" }],
+            "body-sm": ["14px", { "lineHeight": "20px", "fontWeight": "400" }],
+            "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+            "label-sm": ["12px", { "lineHeight": "16px", "fontWeight": "500" }],
+            "headline-lg-mobile": ["24px", { "lineHeight": "32px", "fontWeight": "700" }],
+            "headline-md": ["24px", { "lineHeight": "32px", "fontWeight": "600" }],
+            "headline-sm": ["20px", { "lineHeight": "28px", "fontWeight": "600" }],
+            "headline-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+            "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }]
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-background text-on-surface antialiased h-full flex overflow-hidden">
+<!-- ==================== SIDE NAVBAR (JSON Anchor) ==================== -->
+<aside class="fixed top-0 left-0 h-full w-72 z-40 flex flex-col justify-between p-6 bg-surface-container-low dark:bg-forest-deep border-r border-sage-wash/40 dark:border-forest-deep/60 shrink-0 select-none">
+<div class="flex flex-col gap-8">
+<!-- Brand Header -->
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-xl bg-primary-container flex items-center justify-center text-sun-warmth shrink-0 shadow-sm">
+<span class="material-symbols-outlined text-2xl" data-icon="spa">spa</span>
+</div>
+<div>
+<h1 class="font-headline-sm text-headline-sm text-forest-deep dark:text-sun-warmth font-bold leading-tight">Bethany Nature Care</h1>
+<p class="font-body-sm text-body-sm text-on-surface-variant font-medium">Clinical Management</p>
+</div>
+</div>
+<!-- Navigation Tabs -->
+<nav aria-label="Main Navigation" class="flex flex-col gap-1.5">
+<!-- Dashboard -->
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-on-surface-variant dark:text-surface-variant font-label-md text-label-md hover:bg-surface-container-high dark:hover:bg-primary-container/40 transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="space_dashboard">space_dashboard</span>
+<span>Dashboard</span>
+</a>
+<!-- My Appointments -->
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-on-surface-variant dark:text-surface-variant font-label-md text-label-md hover:bg-surface-container-high dark:hover:bg-primary-container/40 transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="calendar_month">calendar_month</span>
+<span>My Appointments</span>
+</a>
+<!-- Patients & Consultations (ACTIVE) -->
+<a aria-current="page" class="flex items-center gap-3 px-4 py-3 rounded-lg bg-primary-container text-sun-warmth dark:bg-primary-fixed dark:text-on-primary-fixed font-label-md text-label-md transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="group">group</span>
+<span>Patients &amp; Consultations</span>
+</a>
+<!-- Treatment Plans -->
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-on-surface-variant dark:text-surface-variant font-label-md text-label-md hover:bg-surface-container-high dark:hover:bg-primary-container/40 transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="spa">spa</span>
+<span>Treatment Plans</span>
+</a>
+<!-- Reports -->
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-on-surface-variant dark:text-surface-variant font-label-md text-label-md hover:bg-surface-container-high dark:hover:bg-primary-container/40 transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="analytics">analytics</span>
+<span>Reports</span>
+</a>
+<!-- Settings -->
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-on-surface-variant dark:text-surface-variant font-label-md text-label-md hover:bg-surface-container-high dark:hover:bg-primary-container/40 transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+<span>Settings</span>
+</a>
+</nav>
+</div>
+<!-- Footer Logout CTA -->
+<div class="pt-4 border-t border-sage-wash/40">
+<button class="flex items-center gap-3 px-4 py-3 w-full rounded-lg text-on-surface-variant dark:text-surface-variant font-label-md text-label-md hover:bg-surface-container-high dark:hover:bg-primary-container/40 transition-all duration-200 active:scale-[0.99] text-left" type="button">
+<span class="material-symbols-outlined" data-icon="logout">logout</span>
+<span>Logout</span>
+</button>
+</div>
+</aside>
+<!-- ==================== MAIN CONTENT WRAPPER ==================== -->
+<div class="flex-1 flex flex-col pl-72 h-full overflow-hidden">
+<!-- TOP NAV BAR (JSON Anchor) -->
+<header class="h-16 px-8 flex justify-between items-center w-full sticky top-0 z-30 bg-surface dark:bg-forest-deep border-b border-sage-wash/40 dark:border-forest-deep/60 shrink-0">
+<!-- Breadcrumb & Back Context -->
+<div class="flex items-center gap-4">
+<a class="inline-flex items-center gap-1.5 text-secondary hover:text-primary transition-colors font-label-md text-label-md" href="#">
+<span class="material-symbols-outlined text-lg" data-icon="arrow_back">arrow_back</span>
+<span>Back to Appointments</span>
+</a>
+<span class="text-outline-variant">/</span>
+<span class="font-label-md text-label-md text-on-surface-variant">Patient Record</span>
+</div>
+<!-- Trailing Doctor Profile & Status Cluster -->
+<div class="flex items-center gap-6">
+<div class="hidden lg:flex items-center gap-2 px-3 py-1 bg-surface-container rounded-full text-on-surface-variant font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-base text-secondary" data-icon="calendar_today">calendar_today</span>
+<span>Today: Oct 24, 2024</span>
+</div>
+<div class="h-4 w-px bg-sage-wash hidden lg:block"></div>
+<!-- Role & Doctor Identity -->
+<div class="flex items-center gap-3">
+<div class="text-right hidden sm:block">
+<p class="font-label-md text-label-md text-forest-deep leading-tight">ROLE: DOCTOR / Dr. Sarah Jenkins</p>
+<p class="font-label-sm text-label-sm text-bark-brown font-medium">Ayurvedic Physician</p>
+</div>
+<div class="w-9 h-9 rounded-full bg-primary-container text-sun-warmth flex items-center justify-center font-label-md text-label-md ring-2 ring-sage-wash shrink-0">
+            SJ
+          </div>
+</div>
+<!-- Trailing Action Icons -->
+<div class="flex items-center gap-1">
+<button aria-label="Notifications" class="hover:bg-surface-container dark:hover:bg-primary-container/30 rounded-full p-2 transition-colors duration-150 active:scale-95 text-on-surface-variant" type="button">
+<span class="material-symbols-outlined text-xl" data-icon="notifications">notifications</span>
+</button>
+<button aria-label="Help" class="hover:bg-surface-container dark:hover:bg-primary-container/30 rounded-full p-2 transition-colors duration-150 active:scale-95 text-on-surface-variant" type="button">
+<span class="material-symbols-outlined text-xl" data-icon="help">help</span>
+</button>
+</div>
+</div>
+</header>
+<!-- SCROLLABLE PAGE BODY -->
+<main class="flex-1 overflow-y-auto px-8 py-6 space-y-6 bg-background">
+<!-- ==================== PATIENT PROFILE HEADER BANNER ==================== -->
+<section class="bg-surface-container-lowest border border-sage-wash rounded-xl p-6 relative overflow-hidden">
+<!-- Botanical Organic Watermark Accent -->
+<div class="absolute -right-10 -bottom-10 opacity-5 pointer-events-none select-none">
+<span class="material-symbols-outlined text-[160px] text-primary" data-icon="spa">spa</span>
+</div>
+<div class="flex flex-col lg:flex-row lg:items-center justify-between gap-6 relative z-10">
+<!-- Left: Identity & Core Details -->
+<div class="space-y-4">
+<div class="flex flex-wrap items-center gap-3">
+<h2 class="font-headline-lg text-headline-lg text-primary tracking-tight">Robert Chen</h2>
+<span class="px-2.5 py-0.5 rounded-full bg-surface-container text-bark-brown font-label-sm text-label-sm font-semibold border border-sage-wash">ID: BNC-1042</span>
+<span class="inline-flex items-center gap-1 px-3 py-1 rounded-full bg-secondary-container text-on-secondary-container font-label-sm text-label-sm font-semibold">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+                Active Consultation
+              </span>
+</div>
+<!-- Demographics and Ayurvedic Dossier Grid -->
+<div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-y-3 gap-x-6 pt-1">
+<div>
+<span class="block font-label-sm text-label-sm text-outline">Age &amp; Gender</span>
+<span class="font-body-md text-body-md text-on-surface font-medium">46, Male</span>
+</div>
+<div>
+<span class="block font-label-sm text-label-sm text-outline">Prakriti / Dosha</span>
+<span class="inline-flex items-center gap-1 font-body-md text-body-md text-primary font-semibold">
+<span class="material-symbols-outlined text-sm text-bark-brown" data-icon="nature">nature</span>
+                  Vata-Pitta
+                </span>
+</div>
+<div>
+<span class="block font-label-sm text-label-sm text-outline">Blood Group</span>
+<span class="font-body-md text-body-md text-on-surface font-medium">O+</span>
+</div>
+<div>
+<span class="block font-label-sm text-label-sm text-outline">Primary Physician</span>
+<span class="font-body-md text-body-md text-on-surface font-medium">Dr. Sarah Jenkins</span>
+</div>
+<div>
+<span class="block font-label-sm text-label-sm text-outline">Contact</span>
+<span class="font-body-md text-body-md text-on-surface font-medium">+91 98765 43210</span>
+</div>
+<div>
+<span class="block font-label-sm text-label-sm text-outline">Care Mode</span>
+<span class="font-body-md text-body-md text-bark-brown font-medium">In-Clinic Protocol</span>
+</div>
+</div>
+</div>
+<!-- Right: Patient Action Buttons -->
+<div class="flex flex-wrap sm:flex-nowrap items-center gap-3 shrink-0">
+<button class="inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-lg border border-sage-wash bg-surface hover:bg-surface-container font-label-md text-label-md text-forest-deep transition-all duration-150" type="button">
+<span class="material-symbols-outlined text-base" data-icon="print">print</span>
+<span>Print Medical Summary</span>
+</button>
+<button class="inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-lg bg-surface-container-high hover:bg-sage-wash text-forest-deep font-label-md text-label-md transition-all duration-150 border border-sage-wash/60" type="button">
+<span class="material-symbols-outlined text-base" data-icon="edit">edit</span>
+<span>Update Patient Details</span>
+</button>
+<button class="inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-lg bg-primary hover:bg-primary-container text-on-primary font-label-md text-label-md shadow-sm transition-all duration-150 active:scale-95" type="button">
+<span class="material-symbols-outlined text-base" data-icon="medication">medication</span>
+<span>New Prescription</span>
+</button>
+</div>
+</div>
+</section>
+<!-- ==================== WORKSPACE NAVIGATION TABS ==================== -->
+<div class="border-b border-sage-wash flex items-center justify-between gap-4">
+<nav aria-label="Tabs" class="flex space-x-8">
+<button class="border-b-2 border-primary pb-3 px-1 font-label-md text-label-md text-primary font-bold flex items-center gap-2" type="button">
+<span class="material-symbols-outlined text-base" data-icon="prescriptions">prescriptions</span>
+<span>Consultation &amp; Prescription History</span>
+</button>
+<button class="border-b-2 border-transparent pb-3 px-1 font-label-md text-label-md text-on-surface-variant hover:text-on-surface hover:border-outline-variant transition-colors flex items-center gap-2" type="button">
+<span class="material-symbols-outlined text-base" data-icon="restaurant">restaurant</span>
+<span>Diet &amp; Lifestyle Plan</span>
+</button>
+<button class="border-b-2 border-transparent pb-3 px-1 font-label-md text-label-md text-on-surface-variant hover:text-on-surface hover:border-outline-variant transition-colors flex items-center gap-2" type="button">
+<span class="material-symbols-outlined text-base" data-icon="vital_signs">vital_signs</span>
+<span>Vital Signs Log</span>
+</button>
+</nav>
+<div class="hidden sm:flex items-center gap-2 pb-2 text-on-surface-variant font-label-sm text-label-sm">
+<span class="w-2 h-2 rounded-full bg-secondary"></span>
+<span>Last clinical update: Today, 10:15 AM</span>
+</div>
+</div>
+<!-- ==================== BENTO / TWO-COLUMN WORKSPACE LAYOUT ==================== -->
+<div class="grid grid-cols-1 xl:grid-cols-12 gap-6 items-start">
+<!-- LEFT PRIMARY WORKSPACE (8 Columns) -->
+<div class="xl:col-span-8 space-y-6">
+<!-- SECTION 1: Current Consultation & Diagnosis -->
+<section class="bg-surface-container-lowest border border-sage-wash rounded-xl p-6 shadow-sm">
+<!-- Header bar with subtle Sun Warmth wash -->
+<div class="flex items-center justify-between pb-4 mb-5 border-b border-sage-wash/60">
+<div class="flex items-center gap-2.5">
+<span class="p-2 rounded-lg bg-sun-warmth text-bark-brown">
+<span class="material-symbols-outlined text-xl" data-icon="stethoscope">stethoscope</span>
+</span>
+<div>
+<h3 class="font-headline-sm text-headline-sm text-forest-deep font-semibold">Current Consultation &amp; Diagnosis</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Encounter Date: October 24, 2024 (Follow-up Cycle 2)</p>
+</div>
+</div>
+<span class="px-3 py-1 rounded-full bg-surface-container text-on-surface-variant font-label-sm text-label-sm border border-sage-wash font-medium">Session #4</span>
+</div>
+<!-- Bento Diagnostic Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+<!-- Chief Complaints -->
+<div class="p-4 rounded-lg bg-surface-container-low border border-sage-wash/70">
+<div class="flex items-center gap-2 text-bark-brown mb-2 font-label-md text-label-md">
+<span class="material-symbols-outlined text-base" data-icon="report_problem">report_problem</span>
+<span>Chief Complaints</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface font-medium leading-relaxed">
+                  Chronic lower back stiffness, insomnia, impaired digestion.
+                </p>
+<div class="mt-3 flex flex-wrap gap-1.5">
+<span class="px-2 py-0.5 rounded bg-surface-container text-on-surface-variant font-label-sm text-label-sm">Lower Back (Lumbar)</span>
+<span class="px-2 py-0.5 rounded bg-surface-container text-on-surface-variant font-label-sm text-label-sm">Sleep Latency &gt; 2h</span>
+<span class="px-2 py-0.5 rounded bg-surface-container text-on-surface-variant font-label-sm text-label-sm">Agni Mandya</span>
+</div>
+</div>
+<!-- Ayurvedic Diagnosis -->
+<div class="p-4 rounded-lg bg-surface-container-low border border-sage-wash/70">
+<div class="flex items-center gap-2 text-primary mb-2 font-label-md text-label-md">
+<span class="material-symbols-outlined text-base" data-icon="psychiatry">psychiatry</span>
+<span>Ayurvedic Clinical Assessment</span>
+</div>
+<p class="font-headline-sm text-headline-sm text-primary font-bold">
+                  Kati Graha with Vata vitiation
+                </p>
+<p class="mt-2 font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+                  Apana &amp; Vyana Vayu imbalance leading to asthi-majja dhatu depletion with secondary Pitta tikshnata.
+                </p>
+</div>
+</div>
+<!-- Vitals Ribbon -->
+<div>
+<div class="flex items-center justify-between mb-3">
+<h4 class="font-label-md text-label-md text-forest-deep flex items-center gap-2">
+<span class="material-symbols-outlined text-base text-secondary" data-icon="monitor_heart">monitor_heart</span>
+<span>Vital Signs Baseline</span>
+</h4>
+<span class="font-label-sm text-label-sm text-outline">Verified by Nurse Annapurna</span>
+</div>
+<div class="grid grid-cols-3 gap-4">
+<div class="bg-surface rounded-lg p-3.5 border border-sage-wash text-center">
+<span class="block font-label-sm text-label-sm text-outline">Blood Pressure</span>
+<span class="font-headline-sm text-headline-sm text-forest-deep font-bold">120/80</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">mmHg (Optimal)</span>
+</div>
+<div class="bg-surface rounded-lg p-3.5 border border-sage-wash text-center">
+<span class="block font-label-sm text-label-sm text-outline">Pulse (Nadi)</span>
+<span class="font-headline-sm text-headline-sm text-forest-deep font-bold">72</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">bpm (Sarpa Gati)</span>
+</div>
+<div class="bg-surface rounded-lg p-3.5 border border-sage-wash text-center">
+<span class="block font-label-sm text-label-sm text-outline">Body Weight</span>
+<span class="font-headline-sm text-headline-sm text-forest-deep font-bold">74</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">kg (Stable -0.8kg)</span>
+</div>
+</div>
+</div>
+</section>
+<!-- SECTION 2: Prescription & Medicine Details -->
+<section class="bg-surface-container-lowest border border-sage-wash rounded-xl p-6 shadow-sm">
+<div class="flex items-center justify-between pb-4 mb-4 border-b border-sage-wash/60">
+<div class="flex items-center gap-2.5">
+<span class="p-2 rounded-lg bg-secondary-container text-on-secondary-container">
+<span class="material-symbols-outlined text-xl" data-icon="medication_liquid">medication_liquid</span>
+</span>
+<div>
+<h3 class="font-headline-sm text-headline-sm text-forest-deep font-semibold">Prescription &amp; Medicine Details</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Active Ayurvedic Formulations &amp; Dispensary Schedule</p>
+</div>
+</div>
+<button class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg border border-secondary text-secondary hover:bg-secondary-container font-label-sm text-label-sm transition-colors" type="button">
+<span class="material-symbols-outlined text-sm" data-icon="add">add</span>
+<span>Add Formulation</span>
+</button>
+</div>
+<!-- Medicine Table -->
+<div class="overflow-x-auto rounded-lg border border-sage-wash">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-surface-container-low border-b border-sage-wash text-on-surface-variant font-label-sm text-label-sm">
+<th class="py-3 px-4 font-semibold">Medicine Name &amp; Formulation</th>
+<th class="py-3 px-4 font-semibold">Dosage &amp; Frequency</th>
+<th class="py-3 px-4 font-semibold">Duration</th>
+<th class="py-3 px-4 font-semibold">Status</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-sage-wash/70 font-body-sm text-body-sm">
+<!-- Row 1 -->
+<tr class="hover:bg-surface-container-low/50 transition-colors">
+<td class="py-3.5 px-4">
+<div class="font-label-md text-label-md text-forest-deep">Ashwagandha Churna</div>
+<div class="text-on-surface-variant font-body-sm text-body-sm">250g Jar · Root Extract</div>
+</td>
+<td class="py-3.5 px-4 text-on-surface font-medium">
+                      1 tsp twice daily after meals with warm milk
+                    </td>
+<td class="py-3.5 px-4 font-label-md text-label-md text-primary">
+                      21 Days
+                    </td>
+<td class="py-3.5 px-4">
+<span class="inline-block px-2.5 py-1 rounded-full bg-secondary-container text-on-secondary-container font-label-sm text-label-sm font-semibold">Active</span>
+</td>
+</tr>
+<!-- Row 2 -->
+<tr class="hover:bg-surface-container-low/50 transition-colors">
+<td class="py-3.5 px-4">
+<div class="font-label-md text-label-md text-forest-deep">Brahmi Taila</div>
+<div class="text-on-surface-variant font-body-sm text-body-sm">200ml Glass Bottle · Medicated Oil</div>
+</td>
+<td class="py-3.5 px-4 text-on-surface font-medium">
+                      External gentle massage twice weekly (Shiro Abhyanga)
+                    </td>
+<td class="py-3.5 px-4 font-label-md text-label-md text-primary">
+                      30 Days
+                    </td>
+<td class="py-3.5 px-4">
+<span class="inline-block px-2.5 py-1 rounded-full bg-secondary-container text-on-secondary-container font-label-sm text-label-sm font-semibold">Active</span>
+</td>
+</tr>
+<!-- Row 3 -->
+<tr class="hover:bg-surface-container-low/50 transition-colors">
+<td class="py-3.5 px-4">
+<div class="font-label-md text-label-md text-forest-deep">Triphala Tablets</div>
+<div class="text-on-surface-variant font-body-sm text-body-sm">60s Bottle · Standardized Organic</div>
+</td>
+<td class="py-3.5 px-4 text-on-surface font-medium">
+                      2 tablets at bedtime with lukewarm water
+                    </td>
+<td class="py-3.5 px-4 font-label-md text-label-md text-primary">
+                      14 Days
+                    </td>
+<td class="py-3.5 px-4">
+<span class="inline-block px-2.5 py-1 rounded-full bg-secondary-container text-on-secondary-container font-label-sm text-label-sm font-semibold">Active</span>
+</td>
+</tr>
+<!-- Row 4 -->
+<tr class="hover:bg-surface-container-low/50 transition-colors">
+<td class="py-3.5 px-4">
+<div class="font-label-md text-label-md text-forest-deep">Mahanarayan Taila</div>
+<div class="text-on-surface-variant font-body-sm text-body-sm">150ml Amber Bottle · Kati Basti Oil</div>
+</td>
+<td class="py-3.5 px-4 text-on-surface font-medium">
+                      Apply warm over lumbar region once daily before warm bath
+                    </td>
+<td class="py-3.5 px-4 font-label-md text-label-md text-primary">
+                      21 Days
+                    </td>
+<td class="py-3.5 px-4">
+<span class="inline-block px-2.5 py-1 rounded-full bg-secondary-container text-on-secondary-container font-label-sm text-label-sm font-semibold">Active</span>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Special Dietary Instructions Callout Box -->
+<div class="mt-5 p-4 rounded-lg bg-sun-warmth/40 border border-bark-brown/30 flex items-start gap-3">
+<span class="material-symbols-outlined text-bark-brown shrink-0 mt-0.5" data-icon="restaurant">restaurant</span>
+<div class="space-y-1">
+<span class="font-label-md text-label-md text-forest-deep block">Special Dietary &amp; Pathya Instructions</span>
+<p class="font-body-md text-body-md text-on-surface-variant">
+                  Avoid cold refrigerated foods, favor warm soups, ghee, and herbal decoction. Strictly restrict dry lentils, caffeine after 3 PM, and raw salads.
+                </p>
+</div>
+</div>
+</section>
+</div>
+<!-- RIGHT TIMELINE & PAST RECORDS (4 Columns) -->
+<div class="xl:col-span-4 space-y-6">
+<!-- SECTION 3: Previous Consultation Timeline / History -->
+<section class="bg-surface-container-lowest border border-sage-wash rounded-xl p-6 shadow-sm">
+<div class="flex items-center justify-between pb-4 mb-5 border-b border-sage-wash/60">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary" data-icon="history">history</span>
+<h3 class="font-headline-sm text-headline-sm text-forest-deep font-semibold">Visit Timeline</h3>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant font-medium">3 Recorded</span>
+</div>
+<!-- Continuous Timeline Stream -->
+<div class="relative pl-6 space-y-8 before:absolute before:left-2 before:top-2 before:bottom-2 before:w-0.5 before:bg-sage-wash">
+<!-- Timeline Item 1 -->
+<div class="relative group">
+<!-- Marker Dot -->
+<div class="absolute -left-6 top-1 w-4 h-4 rounded-full bg-primary ring-4 ring-sage-wash"></div>
+<div>
+<div class="flex items-center justify-between">
+<span class="font-label-md text-label-md text-forest-deep font-bold">Oct 10, 2024</span>
+<span class="px-2 py-0.5 rounded bg-surface-container text-on-surface-variant font-label-sm text-label-sm">Follow-up</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface font-medium mt-1 leading-snug">
+                    Follow-up visit - Pain reduced by 40%. Rx renewed with adjusted dosage.
+                  </p>
+<!-- Interactive Expander Actions -->
+<div class="mt-3 flex items-center gap-3">
+<button class="inline-flex items-center gap-1 font-label-sm text-label-sm text-secondary hover:text-primary transition-colors" type="button">
+<span class="material-symbols-outlined text-sm" data-icon="visibility">visibility</span>
+<span>View Past Prescription</span>
+</button>
+<span class="text-outline-variant">·</span>
+<button class="inline-flex items-center gap-1 font-label-sm text-label-sm text-secondary hover:text-primary transition-colors" type="button">
+<span class="material-symbols-outlined text-sm" data-icon="notes">notes</span>
+<span>Doctor's Notes</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Timeline Item 2 -->
+<div class="relative group">
+<!-- Marker Dot -->
+<div class="absolute -left-6 top-1 w-4 h-4 rounded-full bg-secondary ring-4 ring-sage-wash"></div>
+<div>
+<div class="flex items-center justify-between">
+<span class="font-label-md text-label-md text-forest-deep font-bold">Sep 15, 2024</span>
+<span class="px-2 py-0.5 rounded bg-surface-container text-on-surface-variant font-label-sm text-label-sm">Comprehensive</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface font-medium mt-1 leading-snug">
+                    Initial consultation - Evaluated Vata Prakriti, commenced Abhyanga &amp; Basti therapy.
+                  </p>
+<!-- Interactive Expander Actions -->
+<div class="mt-3 flex items-center gap-3">
+<button class="inline-flex items-center gap-1 font-label-sm text-label-sm text-secondary hover:text-primary transition-colors" type="button">
+<span class="material-symbols-outlined text-sm" data-icon="visibility">visibility</span>
+<span>View Past Prescription</span>
+</button>
+<span class="text-outline-variant">·</span>
+<button class="inline-flex items-center gap-1 font-label-sm text-label-sm text-secondary hover:text-primary transition-colors" type="button">
+<span class="material-symbols-outlined text-sm" data-icon="notes">notes</span>
+<span>Doctor's Notes</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Timeline Item 3 -->
+<div class="relative group">
+<!-- Marker Dot -->
+<div class="absolute -left-6 top-1 w-4 h-4 rounded-full bg-bark-brown ring-4 ring-sage-wash"></div>
+<div>
+<div class="flex items-center justify-between">
+<span class="font-label-md text-label-md text-forest-deep font-bold">Aug 02, 2024</span>
+<span class="px-2 py-0.5 rounded bg-surface-container text-on-surface-variant font-label-sm text-label-sm">Intake</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface font-medium mt-1 leading-snug">
+                    Wellness intake. Initial registration, lifestyle mapping, and Nadi Pariksha baseline recorded.
+                  </p>
+<!-- Interactive Expander Actions -->
+<div class="mt-3 flex items-center gap-3">
+<button class="inline-flex items-center gap-1 font-label-sm text-label-sm text-secondary hover:text-primary transition-colors" type="button">
+<span class="material-symbols-outlined text-sm" data-icon="visibility">visibility</span>
+<span>View Past Prescription</span>
+</button>
+<span class="text-outline-variant">·</span>
+<button class="inline-flex items-center gap-1 font-label-sm text-label-sm text-secondary hover:text-primary transition-colors" type="button">
+<span class="material-symbols-outlined text-sm" data-icon="notes">notes</span>
+<span>Doctor's Notes</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<div class="mt-8 pt-4 border-t border-sage-wash text-center">
+<button class="font-label-md text-label-md text-primary hover:text-bark-brown transition-colors inline-flex items-center gap-1.5" type="button">
+<span class="material-symbols-outlined text-base" data-icon="folder_open">folder_open</span>
+<span>Open Complete Archival Chart</span>
+</button>
+</div>
+</section>
+<!-- QUICK ACTIONS & SCHEDULE CARD -->
+<div class="p-5 rounded-xl bg-surface-container-low border border-sage-wash space-y-4">
+<div class="flex items-center gap-2 text-forest-deep font-label-md text-label-md font-semibold">
+<span class="material-symbols-outlined text-primary text-lg" data-icon="event_upcoming">event_upcoming</span>
+<span>Next Recommended Session</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+              Target Follow-up: <strong>Nov 08, 2024</strong> for Lumbar flexibility reassessment and Basti cycle stage 2.
+            </p>
+<button class="w-full py-2.5 px-4 rounded-lg bg-surface hover:bg-surface-container border border-sage-wash font-label-md text-label-md text-forest-deep flex items-center justify-center gap-2 transition-colors" type="button">
+<span class="material-symbols-outlined text-base" data-icon="schedule_send">schedule_send</span>
+<span>Schedule Next Appointment</span>
+</button>
+</div>
+</div>
+</div>
+</main>
+</div>
+</body></html>
